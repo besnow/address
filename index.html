@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN" id="bgimg">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>网页引导页</title>
+<meta name="description" content="网页引导页">
+<meta name="keywords" content="网页引导页">
+<link rel="icon" href="" mce_href="/dir/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/buttons.css">
+<link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/showcase.css">
+<link type="text/css" rel="stylesheet" href="style.css" />
+<meta name="referrer" content="no-referrer" />
+<div style="text-align:center;clear:both">
+</div>
+<div class="tooltips">
+<span>
+<iframe src="https://music.163.com/outchain/player?type=0&id=3052064923&auto=1&height=280" width=330 height="300" frameborder="no" marginwidth="0" marginheight="0"></iframe>
+</span>
+</div>
+</head>
+<body>
+
+<div id="top">
+<main id="top_main">
+<div id="top_logo"><img src="src/tx.png" onmouseover="mouseOver()" onmouseout="mouseOut()" id="mainimg"></div>
+<div id="top_title"><img id="top_title01" alt="" src="src/toptitle01.png">
+<br class="top_hr_style01">
+</div>
+<div id="top_title"><img src="src/logo09.png" alt="" id="top_title01">
+
+</div>
+	<br><br>
+<div class="showcase-examples l-over l-center">
+  <a href="https://besnow.org" title="永久域名" class="button button-rounded button-plain button-small-caps button-border" target="_blank">永久域名（挂代理）</a>
+  <a href="https://besnow.me" title="大陆入口" class="button button-rounded button-plain button-small-caps button-border" target="_blank">大陸入口①</a>
+  <a href="https://besnow.ga" title="未填写" class="button button-rounded button-plain button-small-caps button-border"target="_blank" >大陸入口②</a>
+  <a href="https://t.me/Besnow_L" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank" >官方群組</a>
+  <a href="https://t.me/Besnow_Cloud" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank" >公告頻道</a>
+    <a href="https://twitter.com/Besnow_Liu" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank" >官方Twitter</a>
+  </div>
+</main>
+</div>
+<footer id="top_footer">
+<span id="top_copyright">
+<hr class="top_hr_style02">
+<a href="https://besnow.org">&nbsp貝雪雲</a>&nbsp请 Ctrl+D 收藏本地址发布页 <a href="#"></a>
+</span>
+</footer>
+</body>
+<script>
+	function mouseOver(){
+		document.getElementById("mainimg").src="src/tx2.png";//鼠标悬浮时的旋转图标
+	}
+	function mouseOut()
+	{
+		document.getElementById('mainimg').src ="src/tx.png"//默认的旋转图标
+	}
+</script>
+<script type="text/javascript">
+	function change(){
+		var bodyBgs = [];
+bodyBgs[1] = "https://s2.loli.net/2022/05/16/biEUGBe8fNQLPS4.jpg";
+bodyBgs[2] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
+bodyBgs[3] = "https://s2.loli.net/2022/04/17/caNv2CEpfjVrmL7.jpg";
+bodyBgs[4] = "https://s2.loli.net/2022/04/17/xO7usw6aqvbhAVz.jpg";
+bodyBgs[5] = "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png";
+bodyBgs[6] = "https://s2.loli.net/2022/05/16/biEUGBe8fNQLPS4.jpg";
+bodyBgs[7] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
+bodyBgs[8] = "https://s2.loli.net/2022/04/17/caNv2CEpfjVrmL7.jpg";
+bodyBgs[9] = "https://s2.loli.net/2022/04/17/xO7usw6aqvbhAVz.jpg";
+bodyBgs[10] = "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png";
+bodyBgs[11] = "https://s2.loli.net/2022/05/16/biEUGBe8fNQLPS4.jpg";
+bodyBgs[12] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
+
+		var randomBgIndex = Math.round( Math.random() * 12 );
+		var img1= document.getElementById('bgimg');
+		img1.style.backgroundImage='url(' + bodyBgs[randomBgIndex] + ')';
+	        window.setTimeout(function(){change()},10000);
+	}
+	change();
+</script>
+<script type="text/javascript" src="src/snow.min.js"></script>        
+<script type="text/javascript">
+createSnow('src/', 60);
+</script>
+</html>

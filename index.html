@@ -10,15 +10,10 @@
 <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/buttons.css">
 <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/showcase.css">
 <link type="text/css" rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="buttons.css">
 <meta name="referrer" content="no-referrer" />
 <div style="text-align:center;clear:both">
 </div>
-<div class="tooltips">
-<span>
-<iframe src="https://music.163.com/outchain/player?type=0&id=3052064923&auto=1&height=280" width=330 height="300" frameborder="no" marginwidth="0" marginheight="0"></iframe>
-</span>
-</div>
+
 </head>
 <body>
 
@@ -34,14 +29,12 @@
 	<br><br>
 
 	
-<div class="buttons">
-  <a href="https://<span class="random-domain"></span>.besnow.org" target="_blank">官方網站</a>
+<div class="showcase-examples l-over l-center">
 
-  <a href="https://<span class="random-domain"></span>.besnow.me" target="_blank">备用入口1</a>
+  <a href="https://www.besnow.org" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank" >官方网站</a>
+  <a href="https://api.besnow.me" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank" >国内入口1</a>
+  <a href="https://api.besnow.us" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank" >国内入口2</a>
 
-  <a href="https://<span class="random-domain"></span>.besnow.us" target="_blank">备用入口2</a> 
-</div>
-	<div class="showcase-examples l-over l-center">
   <a href="https://t.me/Besnow_L" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank" >官方群組</a>
   <a href="https://t.me/Besnow_Cloud" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank" >公告頻道</a>
   </div>
@@ -51,7 +44,7 @@
 <footer id="top_footer">
 <span id="top_copyright">
 <hr class="top_hr_style02">
-<a href="https://besnow.org">&nbsp貝雪雲</a>&nbsp请 Ctrl+D 收藏本地址发布页 <a href="#"></a>
+<a href="https://www.besnow.org">&nbsp貝雪雲</a>&nbsp请 Ctrl+D 收藏本地址发布页 <a href="#"></a>
 </span>
 </footer>
 </body>
@@ -91,19 +84,5 @@ bodyBgs[12] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
 <script type="text/javascript">
 createSnow('src/', 60);
 </script>
-	<script>
-// 随机域名列表
-var domains = ["www", "abc", "xyz", "123", "test", "temp", "demo", "example", "random", "hello", "world", "foo", "bar", "baz", "one", "two", "three", "four", "five", 
-              "six", "seven", "eight", "nine", "ten"];
 
-// 生成随机域名  
-function generateRandomDomain() {
-  var index = Math.floor(Math.random() * domains.length);
-  return domains[index];
-}
-
-// 插入页面
-var randomDomain = generateRandomDomain();
-document.querySelector(".random-domain").textContent = randomDomain;
-</script>
 </html>

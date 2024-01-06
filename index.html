@@ -32,9 +32,9 @@
 </div>
 	<br><br>
 <div class="showcase-examples l-over l-center">
-  <a href="https://www.besnow.org" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">官方網站</a>
-  <a href="https://www.besnow.me" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">备用入口①</a>
-  <a href="https://www.besnow.us" title="未填写" class="button button-rounded button-plain button-small-caps button-border"target="_blank" >备用入口②</a>
+  <a href="https://<span id="domain0"></span>.besnow.org" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">官方網站</a>
+  <a href="https://<span id="domain1"></span>.besnow.me" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">备用入口①</a>
+  <a href="https://<span id="domain2"></span>.besnow.us" title="未填写" class="button button-rounded button-plain button-small-caps button-border"target="_blank" >备用入口②</a>
   <a href="https://t.me/Besnow_L" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank" >官方群組</a>
   <a href="https://t.me/Besnow_Cloud" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank" >公告頻道</a>
   </div>
@@ -82,5 +82,27 @@ bodyBgs[12] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
 <script type="text/javascript" src="src/snow.min.js"></script>        
 <script type="text/javascript">
 createSnow('src/', 60);
+</script>
+<script>
+
+// 随机域名列表  
+var domains = ["www", "abc", "xyz", "123", "test", "temp", "demo", "example", "random", "hello", "world", "foo", "bar", "baz", "one", "two", "three", "four", "five", 
+              "six", "seven", "eight", "nine", "ten"];
+
+// 生成随机索引             
+var index0 = Math.floor(Math.random() * domains.length);
+var index1 = Math.floor(Math.random() * domains.length); 
+var index2 = Math.floor(Math.random() * domains.length);
+
+// 取出随机域名
+var domain0 = domains[index0];
+var domain1 = domains[index1];
+var domain2 = domains[index2];
+
+// 插入页面
+document.getElementById("domain0").textContent = domain0; 
+document.getElementById("domain1").textContent = domain1;
+document.getElementById("domain2").textContent = domain2;
+
 </script>
 </html>

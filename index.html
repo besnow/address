@@ -85,4 +85,43 @@ bodyBgs[12] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
 createSnow('src/', 60);
 </script>
 
+<script>
+// 定义域名数组
+var domains = ['besnow.me', 'besnow.us']; 
+
+// 生成随机三级域名
+function randomDomain() {
+
+  // 随机选择一个域名
+  var randomDomainIndex = Math.floor(Math.random() * domains.length);
+  var domain = domains[randomDomainIndex];
+
+  // 随机选择子域名
+  var subdomains = ['www', 'm', 'live', 'new', 'online', 'bar'];
+  var randomSubdomainIndex = Math.floor(Math.random() * subdomains.length);
+  var subdomain = subdomains[randomSubdomainIndex];
+
+  return subdomain + '.' + domain;
+
+}
+
+// 替换所有链接中的域名
+var links = document.querySelectorAll('a[href]');
+
+for (var i = 0; i < links.length; i++) {
+  
+  var href = links[i].getAttribute('href');
+  
+  // 检查是否包含这两个域名之一
+  if (href.includes('besnow.me') || href.includes('besnow.us')) {
+
+    var newDomain = randomDomain();  
+    var newHref = href.replace(/(besnow\.me|besnow\.us)/, newDomain);
+
+    links[i].setAttribute('href', newHref);
+
+  }
+
+}
+</script>
 </html>

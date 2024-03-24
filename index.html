@@ -89,41 +89,40 @@ createSnow('src/', 60);
 
 <script>
 // 定义域名数组
-var domains = ['besnow.me', 'besnow.us']; 
+var domains = ['besnow.me', 'besnow.us'];
 
 // 生成随机三级域名
 function randomDomain() {
-
   // 随机选择一个域名
   var randomDomainIndex = Math.floor(Math.random() * domains.length);
   var domain = domains[randomDomainIndex];
 
-  // 随机选择子域名
+  // 随机选择两个子域名
   var subdomains = ['cabbage', 'spinach', 'cauliflower', 'carrot', 'eggplant', 'garlic', 'celery', 'radish', 'broccoli', 'onion', 'leek', 'pepper', 'mushroom', 'pumpkin', 'bean', 'pod', 'tomato', 'cucumber', 'potato', 'lettuce', 'pea', 'corn', 'squash', 'zucchini', 'asparagus', 'beet', 'turnip', 'parsnip', 'artichoke', 'avocado', 'mango', 'banana', 'orange', 'lemon', 'lime', 'grapefruit', 'strawberry', 'blueberry', 'raspberry', 'blackberry', 'cherry', 'peach', 'plum', 'apricot', 'grape', 'kiwi', 'pineapple', 'pear', 'melon', 'watermelon', 'cantaloupe', 'honeydew', 'applesauce', 'broccolisalad', 'brusselssprouts', 'okraplant', 'rhubarbtart', 'yampie', 'sweetpotato', 'butternutsquash', 'acornsquash', 'spaghettiSquash'];
-  var randomSubdomainIndex = Math.floor(Math.random() * subdomains.length);
-  var subdomain = subdomains[randomSubdomainIndex];
+
+  var randomSubdomainIndex1 = Math.floor(Math.random() * subdomains.length);
+  var randomSubdomainIndex2 = Math.floor(Math.random() * subdomains.length);
+
+  var subdomain1 = subdomains[randomSubdomainIndex1];
+  var subdomain2 = subdomains[randomSubdomainIndex2];
+
+  var subdomain = subdomain1 + subdomain2;
 
   return subdomain + '.' + domain;
-
 }
 
 // 替换所有链接中的域名
 var links = document.querySelectorAll('a[href]');
 
 for (var i = 0; i < links.length; i++) {
-  
   var href = links[i].getAttribute('href');
-  
+
   // 检查是否包含这两个域名之一
   if (href.includes('besnow.me') || href.includes('besnow.us')) {
-
-    var newDomain = randomDomain();  
+    var newDomain = randomDomain();
     var newHref = href.replace(/(besnow\.me|besnow\.us)/, newDomain);
-
     links[i].setAttribute('href', newHref);
-
   }
-
 }
 </script>
 </html>

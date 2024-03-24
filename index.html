@@ -97,16 +97,31 @@ function randomDomain() {
   var randomDomainIndex = Math.floor(Math.random() * domains.length);
   var domain = domains[randomDomainIndex];
 
-  // 随机选择两个子域名
+  // 随机选择子域名
   var subdomains = ['cabbage', 'spinach', 'cauliflower', 'carrot', 'eggplant', 'garlic', 'celery', 'radish', 'broccoli', 'onion', 'leek', 'pepper', 'mushroom', 'pumpkin', 'bean', 'pod', 'tomato', 'cucumber', 'potato', 'lettuce', 'pea', 'corn', 'squash', 'zucchini', 'asparagus', 'beet', 'turnip', 'parsnip', 'artichoke', 'avocado', 'mango', 'banana', 'orange', 'lemon', 'lime', 'grapefruit', 'strawberry', 'blueberry', 'raspberry', 'blackberry', 'cherry', 'peach', 'plum', 'apricot', 'grape', 'kiwi', 'pineapple', 'pear', 'melon', 'watermelon', 'cantaloupe', 'honeydew', 'applesauce', 'broccolisalad', 'brusselssprouts', 'okraplant', 'rhubarbtart', 'yampie', 'sweetpotato', 'butternutsquash', 'acornsquash', 'spaghettiSquash'];
 
-  var randomSubdomainIndex1 = Math.floor(Math.random() * subdomains.length);
-  var randomSubdomainIndex2 = Math.floor(Math.random() * subdomains.length);
+  // 随机决定是否组合子域名
+  var combineSubdomains = Math.random() < 0.5;
 
-  var subdomain1 = subdomains[randomSubdomainIndex1];
-  var subdomain2 = subdomains[randomSubdomainIndex2];
+  if (combineSubdomains) {
+    // 组合两个子域名
+    var randomSubdomainIndex1 = Math.floor(Math.random() * subdomains.length);
+    var randomSubdomainIndex2 = Math.floor(Math.random() * subdomains.length);
 
-  var subdomain = subdomain1 + subdomain2;
+    var subdomain1 = subdomains[randomSubdomainIndex1];
+    var subdomain2 = subdomains[randomSubdomainIndex2];
+
+    // 随机决定顺序
+    if (Math.random() < 0.5) {
+      var subdomain = subdomain1 + subdomain2;
+    } else {
+      var subdomain = subdomain2 + subdomain1;
+    }
+  } else {
+    // 使用单个子域名
+    var randomSubdomainIndex = Math.floor(Math.random() * subdomains.length);
+    var subdomain = subdomains[randomSubdomainIndex];
+  }
 
   return subdomain + '.' + domain;
 }

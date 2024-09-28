@@ -22,7 +22,6 @@
             </div>
             <div id="top_title">
                 <img src="src/logo09.png" alt="网站标题">
-                <hr class="top_hr_style01" />
             </div>
 
             <div class="showcase-examples l-over l-center">
@@ -91,12 +90,9 @@
         (function() {
             const domains = ['besnow.me', 'besnow.us'];
 
-            // 使用 Fisher-Yates 洗牌算法
+            // 洗牌函数
             function shuffle(array) {
-                for (let i = array.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [array[i], array[j]] = [array[j], array[i]];
-                }
+                array.sort(() => Math.random() - 0.5);
                 return array;
             }
 
@@ -129,7 +125,7 @@
                 }
 
                 shuffle(selectedSubdomains);
-                const subdomain = selectedSubdomains.join('.'); // 使用点分隔符更标准
+                const subdomain = selectedSubdomains.join('');
 
                 return `${subdomain}.${domain}`;
             }
@@ -138,10 +134,9 @@
             const links = document.querySelectorAll('a.random-domain');
             links.forEach(link => {
                 const href = link.getAttribute('href');
-                const domainPattern = /(besnow\.me|besnow\.us)/;
-                if (domainPattern.test(href)) {
+                if (href.includes('besnow.me') || href.includes('besnow.us')) {
                     const newDomain = randomDomain();
-                    const newHref = href.replace(domainPattern, newDomain);
+                    const newHref = href.replace(/(besnow\.me|besnow\.us)/, newDomain);
                     link.setAttribute('href', newHref);
                 }
             });

@@ -2,154 +2,135 @@
 <html lang="zh-CN" id="bgimg">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>最新地址发布</title>
-    <meta name="description" content="最新地址发布">
-    <meta name="keywords" content="最新地址发布">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://www.bootcdn.cn/buttons/css/buttons.css">
-    <link rel="stylesheet" href="https://www.bootcdn.cn/buttons/css/showcase.css">
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>最新地址發布</title>
+    <meta name="description" content="最新地址發布">
+    <meta name="keywords" content="最新地址發布">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/showcase.css">
+    <link type="text/css" rel="stylesheet" href="style.css" />
     <meta name="referrer" content="no-referrer" />
+
 </head>
 <body>
     <div id="top">
         <main id="top_main">
             <div id="top_logo">
-                <img src="src/tx.png" id="mainimg" alt="主图像">
+                <img src="src/tx.png" onmouseover="mouseOver()" onmouseout="mouseOut()" id="mainimg">
             </div>
-            <div class="top_title">
-                <img id="top_title01" src="src/toptitle01.png" alt="顶部标题图片1">
+            <div id="top_title">
+                <img id="top_title01" alt="" src="src/toptitle01.png">
                 <br class="top_hr_style01" />
             </div>
-            <div class="top_title">
-                <img src="src/logo09.png" id="top_title02" alt="顶部标题图片2">
+            <div id="top_title">
+                <img src="src/logo09.png" alt="" id="top_title01">
             </div>
             <br><br>
             <div class="showcase-examples l-over l-center">
-                <a href="https://www.besnow.org" title="官方网站" class="button button-rounded button-plain button-small-caps button-border" target="_blank">官方网站</a>
-                <a href="https://besnow.me" title="国内入口1" class="button button-rounded button-plain button-small-caps button-border random-domain" target="_blank">国内入口1</a>
-                <a href="https://besnow.us" title="国内入口2" class="button button-rounded button-plain button-small-caps button-border random-domain" target="_blank">国内入口2</a>
-                <a href="https://t.me/Besnow_L" title="官方群组" class="button button-rounded button-plain button-small-caps button-border" target="_blank">官方群组</a>
-                <a href="https://t.me/Besnow_Cloud" title="公告频道" class="button button-rounded button-plain button-small-caps button-border" target="_blank">公告频道</a>
+                <a href="https://www.besnow.org" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">官方网站</a>
+                <a href="https://besnow.me" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">国内入口1</a>
+                <a href="https://besnow.us" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">国内入口2</a>
+                <a href="https://t.me/Besnow_L" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">官方群組</a>
+                <a href="https://t.me/Besnow_Cloud" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">公告頻道</a>
             </div>
         </main>
     </div>
     <footer id="top_footer">
         <span id="top_copyright">
             <hr class="top_hr_style02">
-            <a href="https://www.besnow.org">&nbsp;贝雪云</a>&nbsp;请按 Ctrl+D 收藏本地址发布页 <a href="#"></a>
+            <a href="https://www.besnow.org">&nbsp貝雪雲</a>&nbsp请 Ctrl+D 收藏本地址发布页 <a href="#"></a>
         </span>
     </footer>
 
-    <!-- JavaScript 部分 -->
     <script>
-        // 更优雅地添加鼠标悬停事件
-        const mainImg = document.getElementById('mainimg');
-        mainImg.addEventListener('mouseover', () => {
-            mainImg.src = "src/tx2.png"; // 鼠标悬浮时的图标
-        });
-        mainImg.addEventListener('mouseout', () => {
-            mainImg.src = "src/tx.png"; // 默认图标
-        });
-    </script>
-
-    <script>
-        // 使用 setInterval 优化背景切换
-        function changeBackground() {
-            const bodyBgs = [
-                "https://s2.loli.net/2022/05/16/biEUGBe8fNQLPS4.jpg",
-                "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg",
-                "https://s2.loli.net/2022/04/17/caNv2CEpfjVrmL7.jpg",
-                "https://s2.loli.net/2022/04/17/xO7usw6aqvbhAVz.jpg",
-                "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png"
-            ];
-
-            // 使用懒加载技术，仅在需要时加载图片
-            let loadedImages = {};
-
-            function preloadImage(src) {
-                if (!loadedImages[src]) {
-                    const img = new Image();
-                    img.src = src;
-                    loadedImages[src] = img;
-                }
-            }
-
-            const randomBgIndex = Math.floor(Math.random() * bodyBgs.length);
-            const selectedBg = bodyBgs[randomBgIndex];
-            document.getElementById('bgimg').style.backgroundImage = `url(${selectedBg})`;
-
-            // 预加载下一张背景图片
-            const nextBgIndex = (randomBgIndex + 1) % bodyBgs.length;
-            preloadImage(bodyBgs[nextBgIndex]);
+        function mouseOver() {
+            document.getElementById("mainimg").src = "src/tx2.png"; //鼠标悬浮时的旋转图标
         }
-        // 初始调用并每隔10秒更换背景
-        changeBackground();
-        setInterval(changeBackground, 10000);
+        function mouseOut() {
+            document.getElementById('mainimg').src = "src/tx.png"; //默认的旋转图标
+        }
     </script>
-
-    <script src="src/snow.min.js"></script>
-    <script>
-        // 启用雪花特效，数量为30，减少性能影响
-        createSnow('src/', 30);
+    <script type="text/javascript">
+        function change() {
+            var bodyBgs = [];
+            bodyBgs[1] = "https://s2.loli.net/2022/05/16/biEUGBe8fNQLPS4.jpg";
+            bodyBgs[2] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
+            bodyBgs[3] = "https://s2.loli.net/2022/04/17/caNv2CEpfjVrmL7.jpg";
+            bodyBgs[4] = "https://s2.loli.net/2022/04/17/xO7usw6aqvbhAVz.jpg";
+            bodyBgs[5] = "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png";
+            bodyBgs[6] = "https://s2.loli.net/2022/05/16/biEUGBe8fNQLPS4.jpg";
+            bodyBgs[7] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
+            bodyBgs[8] = "https://s2.loli.net/2022/04/17/caNv2CEpfjVrmL7.jpg";
+            bodyBgs[9] = "https://s2.loli.net/2022/04/17/xO7usw6aqvbhAVz.jpg";
+            bodyBgs[10] = "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png";
+            bodyBgs[11] = "https://s2.loli.net/2022/05/16/biEUGBe8fNQLPS4.jpg";
+            bodyBgs[12] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
+    
+            var randomBgIndex = Math.round(Math.random() * 12);
+            var img1 = document.getElementById('bgimg');
+            img1.style.backgroundImage = 'url(' + bodyBgs[randomBgIndex] + ')';
+            window.setTimeout(function () { change() }, 10000);
+        }
+        change();
     </script>
-
+    <script type="text/javascript" src="src/snow.min.js"></script>
+    <script type="text/javascript">
+        createSnow('src/', 60);
+    </script>
     <script>
-        (function() {
-            const domains = ['besnow.me', 'besnow.us'];
-
-            // 洗牌函数
-            function shuffle(array) {
-                array.sort(() => Math.random() - 0.5);
-                return array;
+        // 定义域名数组
+        var domains = ['besnow.me', 'besnow.us'];
+    
+        // 生成随机三级域名
+        function randomDomain() {
+            // 随机选择一个域名
+            var randomDomainIndex = Math.floor(Math.random() * domains.length);
+            var domain = domains[randomDomainIndex];
+    
+            // 随机选择子域名
+            var subdomains = ['cabbage', 'spinach', 'cauliflower', 'carrot', 'eggplant', 'garlic', 'celery', 'radish', 'broccoli', 'onion', 'leek', 'pepper', 'mushroom', 'pumpkin', 'bean', 'pod', 'tomato', 'cucumber', 'potato', 'lettuce', 'pea', 'corn', 'squash', 'zucchini', 'asparagus', 'beet', 'turnip', 'parsnip', 'artichoke', 'avocado', 'mango', 'banana', 'orange', 'lemon', 'lime', 'grapefruit', 'strawberry', 'blueberry', 'raspberry', 'blackberry', 'cherry', 'peach', 'plum', 'apricot', 'grape', 'kiwi', 'pineapple', 'pear', 'melon', 'watermelon', 'cantaloupe', 'honeydew', 'applesauce', 'broccolisalad', 'brusselssprouts', 'okraplant', 'rhubarbtart', 'yampie', 'sweetpotato', 'butternutsquash', 'acornsquash', 'spaghettiSquash'];
+    
+            // 随机决定是否组合子域名
+            var combineSubdomains = Math.random() < 0.5;
+    
+            if (combineSubdomains) {
+                // 组合两个子域名
+                var randomSubdomainIndex1 = Math.floor(Math.random() * subdomains.length);
+                var randomSubdomainIndex2 = Math.floor(Math.random() * subdomains.length);
+    
+                var subdomain1 = subdomains[randomSubdomainIndex1];
+                var subdomain2 = subdomains[randomSubdomainIndex2];
+    
+                // 随机决定顺序
+                var subdomain;
+                if (Math.random() < 0.5) {
+                    subdomain = subdomain1 + subdomain2;
+                } else {
+                    subdomain = subdomain2 + subdomain1;
+                }
+            } else {
+                // 使用单个子域名
+                var randomSubdomainIndex = Math.floor(Math.random() * subdomains.length);
+                var subdomain = subdomains[randomSubdomainIndex];
             }
-
-            // 生成随机三级域名
-            function randomDomain() {
-                const domain = domains[Math.floor(Math.random() * domains.length)];
-                const subdomains = [
-                    'fast', 'slow', 'happy', 'sad', 'angry', 'calm', 'bright', 'dark', 'big', 'small',
-                    'cabbage', 'spinach', 'cauliflower', 'carrot', 'eggplant', 'garlic', 'celery', 'radish',
-                    'broccoli', 'onion', 'leek', 'pepper', 'mushroom', 'pumpkin', 'bean', 'tomato',
-                    'cucumber', 'potato', 'lettuce', 'pea', 'corn', 'squash', 'zucchini', 'asparagus',
-                    'beet', 'turnip', 'parsnip', 'artichoke', 'avocado', 'mango', 'banana', 'orange',
-                    'lemon', 'lime', 'grapefruit', 'strawberry', 'blueberry', 'raspberry', 'blackberry',
-                    'cherry', 'peach', 'plum', 'apricot', 'grape', 'kiwi', 'pineapple', 'pear', 'melon',
-                    'watermelon', 'cantaloupe', 'honeydew', 'apple', 'dragonfruit', 'passionfruit',
-                    'pomegranate', 'lychee', 'papaya', 'guava', 'fig', 'date', 'coconut', 'almond', 'walnut',
-                    'peanut', 'cashew', 'pistachio', 'hazelnut', 'macadamia', 'pecan', 'brazilnut',
-                    'pine', 'oak', 'maple', 'birch', 'spruce', 'cedar', 'willow', 'ash', 'beech', 'elm'
-                ];
-
-                const numSubdomains = Math.floor(Math.random() * 3) + 1;
-                let selectedSubdomains = [];
-                for (let i = 0; i < numSubdomains; i++) {
-                    const randomIndex = Math.floor(Math.random() * subdomains.length);
-                    selectedSubdomains.push(subdomains[randomIndex]);
-                }
-
-                if (Math.random() < 0.3) {
-                    selectedSubdomains.push(Math.floor(Math.random() * 100));
-                }
-
-                shuffle(selectedSubdomains);
-                const subdomain = selectedSubdomains.join('');
-
-                return `${subdomain}.${domain}`;
+    
+            return subdomain + '.' + domain;
+        }
+    
+        // 替换所有链接中的域名
+        var links = document.querySelectorAll('a[href]');
+    
+        for (var i = 0; i < links.length; i++) {
+            var href = links[i].getAttribute('href');
+    
+            // 检查是否包含这两个域名之一
+            if (href.includes('besnow.me') || href.includes('besnow.us')) {
+                var newDomain = randomDomain();
+                var newHref = href.replace(/(besnow\.me|besnow\.us)/, newDomain);
+                links[i].setAttribute('href', newHref);
             }
-
-            // 替换链接中的域名，仅替换具有特定类的链接
-            const links = document.querySelectorAll('a.random-domain');
-            links.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href.includes('besnow.me') || href.includes('besnow.us')) {
-                    const newDomain = randomDomain();
-                    const newHref = href.replace(/(besnow\.me|besnow\.us)/, newDomain);
-                    link.setAttribute('href', newHref);
-                }
-            });
-        })();
+        }
     </script>
 </body>
 </html>

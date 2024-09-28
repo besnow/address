@@ -2,88 +2,101 @@
 <html lang="zh-CN" id="bgimg">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>最新地址發布</title>
-    <meta name="description" content="最新地址發布">
-    <meta name="keywords" content="最新地址發布">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>最新地址发布</title>
+    <meta name="description" content="最新地址发布">
+    <meta name="keywords" content="最新地址发布">
     <link rel="shortcut icon" href="favicon.ico" />
+    
+    <!-- 保持原有的外部样式表链接 -->
     <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/buttons.css">
     <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/showcase.css">
-    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
     <meta name="referrer" content="no-referrer" />
-
 </head>
 <body>
     <div id="top">
         <main id="top_main">
             <div id="top_logo">
-                <img src="src/tx.png" onmouseover="mouseOver()" onmouseout="mouseOut()" id="mainimg">
+                <img src="src/tx.png" alt="主图标" id="mainimg">
             </div>
             <div id="top_title">
-                <img src="src/logo09.png" alt="">
-                <br class="top_hr_style01" />
+                <img src="src/logo09.png" alt="网站标题">
+                <hr class="top_hr_style01" />
             </div>
 
-
-            <br><br>
             <div class="showcase-examples l-over l-center">
-                <a href="https://www.besnow.org" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">官方网站</a>
-                <a href="https://besnow.me" title="未填写" class="button random-domain button-rounded button-plain button-small-caps button-border" target="_blank">国内入口1</a>
-                <a href="https://besnow.us" title="未填写" class="button random-domain button-rounded button-plain button-small-caps button-border" target="_blank">国内入口2</a>
-                <a href="https://t.me/Besnow_L" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">官方群組</a>
-                <a href="https://t.me/Besnow_Cloud" title="未填写" class="button button-rounded button-plain button-small-caps button-border" target="_blank">公告頻道</a>
+                <a href="https://www.besnow.org" title="官方网站" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">官方网站</a>
+                <a href="https://besnow.me" title="国内入口1" class="button random-domain button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">国内入口1</a>
+                <a href="https://besnow.us" title="国内入口2" class="button random-domain button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">国内入口2</a>
+                <a href="https://t.me/Besnow_L" title="官方群组" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">官方群组</a>
+                <a href="https://t.me/Besnow_Cloud" title="公告频道" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">公告频道</a>
             </div>
         </main>
     </div>
     <footer id="top_footer">
+        <hr class="top_hr_style02">
         <span id="top_copyright">
-            <hr class="top_hr_style02">
-            <a href="https://www.besnow.org">&nbsp貝雪雲</a>&nbsp请 Ctrl+D 收藏本地址发布页 <a href="#"></a>
+            <a href="https://www.besnow.org">&nbsp;贝雪云</a>&nbsp;请 Ctrl+D 收藏本地址发布页
         </span>
     </footer>
 
+    <!-- 优化后的JavaScript -->
+
+    <!-- 使用事件监听器替代内联事件 -->
     <script>
-        function mouseOver() {
-            document.getElementById("mainimg").src = "src/tx2.png"; //鼠标悬浮时的旋转图标
-        }
-        function mouseOut() {
-            document.getElementById('mainimg').src = "src/tx.png"; //默认的旋转图标
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainImg = document.getElementById('mainimg');
+            mainImg.addEventListener('mouseover', () => {
+                mainImg.src = "src/tx2.png"; // 鼠标悬浮时的图标
+            });
+            mainImg.addEventListener('mouseout', () => {
+                mainImg.src = "src/tx.png"; // 默认图标
+            });
+        });
     </script>
-    <script type="text/javascript">
-        function change() {
-            var bodyBgs = [];
-            bodyBgs[1] = "https://s2.loli.net/2022/05/16/biEUGBe8fNQLPS4.jpg";
-            bodyBgs[2] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
-            bodyBgs[3] = "https://s2.loli.net/2022/04/17/caNv2CEpfjVrmL7.jpg";
-            bodyBgs[4] = "https://s2.loli.net/2022/04/17/xO7usw6aqvbhAVz.jpg";
-            bodyBgs[5] = "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png";
-            bodyBgs[6] = "https://s2.loli.net/2022/05/16/biEUGBe8fNQLPS4.jpg";
-            bodyBgs[7] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
-            bodyBgs[8] = "https://s2.loli.net/2022/04/17/caNv2CEpfjVrmL7.jpg";
-            bodyBgs[9] = "https://s2.loli.net/2022/04/17/xO7usw6aqvbhAVz.jpg";
-            bodyBgs[10] = "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png";
-            bodyBgs[11] = "https://s2.loli.net/2022/05/16/biEUGBe8fNQLPS4.jpg";
-            bodyBgs[12] = "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg";
-    
-            var randomBgIndex = Math.round(Math.random() * 12);
-            var img1 = document.getElementById('bgimg');
-            img1.style.backgroundImage = 'url(' + bodyBgs[randomBgIndex] + ')';
-            window.setTimeout(function () { change() }, 10000);
+
+    <script>
+        // 优化背景切换函数
+        function changeBackground() {
+            const bodyBgs = [
+                "https://s2.loli.net/2022/05/16/biEUGBe8fNQLPS4.jpg",
+                "https://s2.loli.net/2022/04/17/fQkmOVxB8hEgejY.jpg",
+                "https://s2.loli.net/2022/04/17/caNv2CEpfjVrmL7.jpg",
+                "https://s2.loli.net/2022/04/17/xO7usw6aqvbhAVz.jpg",
+                "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png"
+            ];
+
+            const randomBg = bodyBgs[Math.floor(Math.random() * bodyBgs.length)];
+            document.getElementById('bgimg').style.backgroundImage = `url(${randomBg})`;
         }
-        change();
+
+        // 使用 setInterval 代替递归的 setTimeout
+        setInterval(changeBackground, 10000);
+        // 初始化背景
+        changeBackground();
     </script>
-    <script type="text/javascript" src="src/snow.min.js"></script>
-    <script type="text/javascript">
-        createSnow('src/', 60);
+
+    <!-- 引入雪花效果脚本，确保路径正确 -->
+    <script src="src/snow.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof createSnow === 'function') {
+                createSnow('src/', 60);
+            }
+        });
     </script>
+
     <script>
         (function() {
             const domains = ['besnow.me', 'besnow.us'];
 
-            // 洗牌函数
+            // 使用 Fisher-Yates 洗牌算法
             function shuffle(array) {
-                array.sort(() => Math.random() - 0.5);
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
                 return array;
             }
 
@@ -116,7 +129,7 @@
                 }
 
                 shuffle(selectedSubdomains);
-                const subdomain = selectedSubdomains.join('');
+                const subdomain = selectedSubdomains.join('.'); // 使用点分隔符更标准
 
                 return `${subdomain}.${domain}`;
             }
@@ -125,9 +138,10 @@
             const links = document.querySelectorAll('a.random-domain');
             links.forEach(link => {
                 const href = link.getAttribute('href');
-                if (href.includes('besnow.me') || href.includes('besnow.us')) {
+                const domainPattern = /(besnow\.me|besnow\.us)/;
+                if (domainPattern.test(href)) {
                     const newDomain = randomDomain();
-                    const newHref = href.replace(/(besnow\.me|besnow\.us)/, newDomain);
+                    const newHref = href.replace(domainPattern, newDomain);
                     link.setAttribute('href', newHref);
                 }
             });

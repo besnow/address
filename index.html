@@ -21,7 +21,8 @@
                 <img src="src/tx.png" alt="主图标" id="mainimg">
             </div>
             <div id="top_title">
-                <img src="src/logo09.png" alt="网站标题">
+                <!-- 添加类名或内联样式以缩小图片 -->
+                <img src="src/logo09.png" alt="网站标题" id="logoTitle">
             </div>
 
             <div class="showcase-examples l-over l-center">
@@ -87,9 +88,12 @@
         (function() {
             const domains = ['besnow.me', 'besnow.us'];
 
-            // 洗牌函数
+            // 使用 Fisher-Yates 算法实现洗牌
             function shuffle(array) {
-                array.sort(() => Math.random() - 0.5);
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
                 return array;
             }
 
@@ -122,7 +126,7 @@
                 }
 
                 shuffle(selectedSubdomains);
-                const subdomain = selectedSubdomains.join('');
+                const subdomain = selectedSubdomains.join(''); // 直接连接子域名
 
                 return `${subdomain}.${domain}`;
             }
@@ -139,5 +143,15 @@
             });
         })();
     </script>
+
+    <!-- 添加样式以缩小 logo09.png 图片 -->
+    <style>
+        /* 确保在 style.css 中添加以下样式，或在此处直接添加 */
+        #logoTitle {
+            width: 50%;
+            height: auto; /* 保持纵横比 */
+        }
+    </style>
 </body>
 </html>
+

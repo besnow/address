@@ -11,8 +11,122 @@
     <!-- 保持原有的外部样式表链接 -->
     <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/buttons.css">
     <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/showcase.css">
-    <link rel="stylesheet" href="style.css" />
+    
+    <!-- 可选：引入示例中用到的 Google 字体（国内可能需自行替换或本地化） -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
     <meta name="referrer" content="no-referrer" />
+
+    <!-- 内联样式（示例），也可放到单独的 style.css 中 -->
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            font-family: 'Roboto', sans-serif; /* 可换成更适合中文的字体 */
+            color: #fff;
+        }
+        body {
+            /* 让背景图覆盖整个页面 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* 加一个纯色或渐变叠加层，统一背景风格 */
+            background-color: #000;
+            transition: background-image 0.5s ease-in-out;
+        }
+        
+        /* 让背景图淡入淡出：当我们改变 background-image 时，通过切换透明度来实现 */
+        #bgimg {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* 主体容器，垂直居中 */
+        #top_main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh; /* 让主体部分占据绝大部分屏幕 */
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* 主LOGO图标 */
+        #top_logo #mainimg {
+            width: 120px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        #top_logo #mainimg:hover {
+            transform: scale(1.1);
+        }
+
+        /* 标题logo */
+        #top_title #logoTitle {
+            width: 30%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        /* 按钮容器 */
+        .showcase-examples {
+            margin-top: 20px;
+        }
+        .showcase-examples a.button {
+            margin: 0 10px 10px;
+            border-color: #fff !important;
+            color: #fff !important;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 0.95rem;
+            padding: 10px 16px;
+        }
+        .showcase-examples a.button:hover {
+            background-color: #fff !important;
+            color: #000 !important;
+        }
+
+        /* 底部样式 */
+        #top_footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        hr.top_hr_style02 {
+            width: 50%;
+            margin: 20px auto;
+            border: none;
+            border-top: 2px solid #ffffff33; /* 半透明白色 */
+        }
+        #top_footer span a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px dashed #fff0;
+            transition: border-color 0.3s;
+        }
+        #top_footer span a:hover {
+            border-color: #fff;
+        }
+
+        /* 自适应：小屏时缩小一些元素 */
+        @media (max-width: 480px) {
+            #top_logo #mainimg {
+                width: 80px;
+            }
+            #top_title #logoTitle {
+                width: 60%;
+            }
+            .showcase-examples a.button {
+                font-size: 0.85rem;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="top">
@@ -21,7 +135,6 @@
                 <img src="src/tx.png" alt="主图标" id="mainimg">
             </div>
             <div id="top_title">
-                <!-- 添加类名或内联样式以缩小图片 -->
                 <img src="src/logo09.png" alt="网站标题" id="logoTitle">
             </div>
 
@@ -34,16 +147,16 @@
             </div>
         </main>
     </div>
+
     <footer id="top_footer">
         <hr class="top_hr_style02">
-        <span id="top_copyright">
-            <a href="https://www.besnow.org">&nbsp;贝雪云</a>&nbsp;请 Ctrl+D 收藏本地址发布页
+        <span>
+            <!-- 这里将链接改为当前导航页的域名 -->
+            <a href="https://address.besnow.xyz">&nbsp;贝雪云</a>&nbsp;请 Ctrl+D 收藏本地址发布页
         </span>
     </footer>
 
-    <!-- 优化后的JavaScript -->
-
-    <!-- 使用事件监听器替代内联事件 -->
+    <!-- 鼠标悬停主图标切换 -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const mainImg = document.getElementById('mainimg');
@@ -56,25 +169,35 @@
         });
     </script>
 
+    <!-- 背景切换，加入淡入淡出效果 -->
     <script>
-        // 优化背景切换函数
-        function changeBackground() {
-            const bodyBgs = [
-                "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png",
-                "https://s2.loli.net/2022/04/17/caNv2CEpfjVrmL7.jpg"
-            ];
+        let currentBgIndex = 0;
+        const bodyBgs = [
+            "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png",
+            "https://s2.loli.net/2022/04/17/caNv2CEpfjVrmL7.jpg"
+        ];
 
-            const randomBg = bodyBgs[Math.floor(Math.random() * bodyBgs.length)];
-            document.getElementById('bgimg').style.backgroundImage = `url(${randomBg})`;
+        function changeBackground() {
+            currentBgIndex = (currentBgIndex + 1) % bodyBgs.length;
+            const newBg = bodyBgs[currentBgIndex];
+            const bgImgEl = document.getElementById('bgimg');
+            
+            // 先让其透明
+            bgImgEl.style.opacity = 0;
+            // 半秒后再切换背景图，并将透明度恢复
+            setTimeout(() => {
+                bgImgEl.style.backgroundImage = `url(${newBg})`;
+                bgImgEl.style.opacity = 1;
+            }, 500);
         }
 
-        // 使用 setInterval 代替递归的 setTimeout
+        // 每 10 秒切换一次背景
         setInterval(changeBackground, 10000);
-        // 初始化背景
+        // 页面载入时初始化背景
         changeBackground();
     </script>
 
-    <!-- 引入雪花效果脚本，确保路径正确 -->
+    <!-- 雪花效果脚本（如果不需要可删除） -->
     <script src="src/snow.min.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -84,6 +207,7 @@
         });
     </script>
 
+    <!-- 随机域名脚本（如不需要可删除） -->
     <script>
         (function() {
             const domains = ['besnow.me', 'besnow.us'];
@@ -121,12 +245,13 @@
                     selectedSubdomains.push(subdomains[randomIndex]);
                 }
 
+                // 30% 概率带上随机数字
                 if (Math.random() < 0.3) {
                     selectedSubdomains.push(Math.floor(Math.random() * 100));
                 }
 
                 shuffle(selectedSubdomains);
-                const subdomain = selectedSubdomains.join(''); // 直接连接子域名
+                const subdomain = selectedSubdomains.join('');
 
                 return `${subdomain}.${domain}`;
             }
@@ -143,15 +268,5 @@
             });
         })();
     </script>
-
-    <!-- 添加样式以缩小 logo09.png 图片 -->
-    <style>
-        /* 确保在 style.css 中添加以下样式，或在此处直接添加 */
-        #logoTitle {
-            width: 30%;
-            height: auto; /* 保持纵横比 */
-        }
-    </style>
 </body>
 </html>
-

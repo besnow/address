@@ -1,253 +1,255 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>最新地址发布</title>
-    <meta name="description" content="最新地址发布">
-    <meta name="keywords" content="最新地址发布">
-    <link rel="shortcut icon" href="favicon.ico" />
-    
-    <!-- 外部样式表 -->
-    <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/buttons.css">
-    <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/showcase.css">
-    
-    <!-- 可选：Google Fonts（国内环境可能需要替换） -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    
-    <meta name="referrer" content="no-referrer" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>最新地址发布</title>
+  <meta name="description" content="最新地址发布">
+  <meta name="keywords" content="最新地址发布">
+  <link rel="shortcut icon" href="favicon.ico" />
 
-    <!-- 内联样式 -->
-    <style>
-        /* 全局基础样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html, body {
-            height: 100%;
-            font-family: 'Roboto', sans-serif;
-            color: #fff;
-        }
-        /* 将背景及过渡效果应用到 body 元素 */
-        body#bgimg {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #000;
-            transition: opacity 0.5s ease-in-out;
-        }
-        
-        /* 主体内容居中 */
-        #top_main {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 90vh;
-            text-align: center;
-            padding: 20px;
-        }
-        /* LOGO 图标及 hover 效果 */
-        #top_logo #mainimg {
-            width: 120px;
-            height: auto;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        #top_logo #mainimg:hover {
-            transform: scale(1.1);
-        }
-        /* 网站标题 */
-        #top_title #logoTitle {
-            width: 30%;
-            height: auto;
-            margin: 20px 0;
-        }
-        /* 按钮样式 */
-        .showcase-examples {
-            margin-top: 20px;
-        }
-        .showcase-examples a.button {
-            margin: 0 10px 10px;
-            border-color: #fff !important;
-            color: #fff !important;
-            transition: background-color 0.3s, color 0.3s;
-            font-size: 0.95rem;
-            padding: 10px 16px;
-        }
-        .showcase-examples a.button:hover {
-            background-color: #fff !important;
-            color: #000 !important;
-        }
-        /* 底部样式 */
-        #top_footer {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        hr.top_hr_style02 {
-            width: 50%;
-            margin: 20px auto;
-            border: none;
-            border-top: 2px solid #ffffff33;
-        }
-        #top_footer span a {
-            color: #fff;
-            text-decoration: none;
-            border-bottom: 1px dashed transparent;
-            transition: border-color 0.3s;
-        }
-        #top_footer span a:hover {
-            border-color: #fff;
-        }
-        /* 移动端样式 */
-        @media (max-width: 480px) {
-            #top_logo #mainimg {
-                width: 80px;
-            }
-            #top_title #logoTitle {
-                width: 60%;
-            }
-            .showcase-examples a.button {
-                font-size: 0.85rem;
-                margin-bottom: 8px;
-            }
-        }
-    </style>
+  <!-- 外部样式表 -->
+  <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/buttons.css">
+  <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/showcase.css">
+
+  <!-- 可选：Google Fonts（国内环境可能需要替换） -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <meta name="referrer" content="no-referrer" />
+
+  <!-- 内联样式 -->
+  <style>
+    /* 全局基础样式 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+    }
+    /* 将背景及过渡效果应用到 body 元素 */
+    body#bgimg {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #000;
+      transition: opacity 0.5s ease-in-out;
+    }
+    
+    /* 主体内容居中 */
+    #top_main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+      text-align: center;
+      padding: 20px;
+    }
+    /* LOGO 图标及 hover 效果 */
+    #top_logo #mainimg {
+      width: 120px;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    /* 网站标题 */
+    #top_title #logoTitle {
+      width: 30%;
+      height: auto;
+      margin: 20px 0;
+    }
+    /* 按钮样式 */
+    .showcase-examples {
+      margin-top: 20px;
+    }
+    .showcase-examples a.button {
+      margin: 0 10px 10px;
+      border-color: #fff !important;
+      color: #fff !important;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: 0.95rem;
+      padding: 10px 16px;
+    }
+    .showcase-examples a.button:hover {
+      background-color: #fff !important;
+      color: #000 !important;
+    }
+    /* 底部样式 */
+    #top_footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    hr.top_hr_style02 {
+      width: 50%;
+      margin: 20px auto;
+      border: none;
+      border-top: 2px solid #ffffff33;
+    }
+    #top_footer span a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px dashed transparent;
+      transition: border-color 0.3s;
+    }
+    #top_footer span a:hover {
+      border-color: #fff;
+    }
+    /* 移动端样式 */
+    @media (max-width: 480px) {
+      #top_logo #mainimg {
+        width: 80px;
+      }
+      #top_title #logoTitle {
+        width: 60%;
+      }
+      .showcase-examples a.button {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+      }
+    }
+    
+    /* 主图标旋转动画 */
+    @keyframes rotateAnimation {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .rotate {
+      animation: rotateAnimation 2s linear infinite;
+    }
+  </style>
 </head>
 <body id="bgimg">
-    <div id="top">
-        <main id="top_main">
-            <div id="top_logo">
-                <img src="src/tx.png" alt="主图标" id="mainimg">
-            </div>
-            <div id="top_title">
-                <img src="src/logo09.png" alt="网站标题" id="logoTitle">
-            </div>
-            <div class="showcase-examples l-over l-center">
-                <a href="https://www.besnow.org" title="官方网站" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">官方网站</a>
-                <a href="https://besnow.me" title="国内入口1" class="button random-domain button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">国内入口1</a>
-                <a href="https://besnow.us" title="国内入口2" class="button random-domain button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">国内入口2</a>
-                <a href="https://t.me/Besnow_L" title="官方群组" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">官方群组</a>
-                <a href="https://t.me/Besnow_Cloud" title="公告频道" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">公告频道</a>
-            </div>
-        </main>
-    </div>
+  <div id="top">
+    <main id="top_main">
+      <div id="top_logo">
+        <img src="src/tx.png" alt="主图标" id="mainimg">
+      </div>
+      <div id="top_title">
+        <img src="src/logo09.png" alt="网站标题" id="logoTitle">
+      </div>
+      <div class="showcase-examples l-over l-center">
+        <a href="https://www.besnow.org" title="官方网站" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">官方网站</a>
+        <a href="https://besnow.me" title="国内入口1" class="button random-domain button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">国内入口1</a>
+        <a href="https://besnow.us" title="国内入口2" class="button random-domain button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">国内入口2</a>
+        <a href="https://t.me/Besnow_L" title="官方群组" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">官方群组</a>
+        <a href="https://t.me/Besnow_Cloud" title="公告频道" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">公告频道</a>
+      </div>
+    </main>
+  </div>
 
-    <footer id="top_footer">
-        <hr class="top_hr_style02">
-        <span>
-            <!-- 链接改为当前导航页的地址 -->
-            <a href="https://address.besnow.xyz">&nbsp;贝雪云</a>&nbsp;请 Ctrl+D 收藏本地址发布页
-        </span>
-    </footer>
+  <footer id="top_footer">
+    <hr class="top_hr_style02">
+    <span>
+      <a href="https://address.besnow.xyz">&nbsp;贝雪云</a>&nbsp;请 Ctrl+D 收藏本地址发布页
+    </span>
+  </footer>
 
-    <!-- 主图标悬停切换效果 -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mainImg = document.getElementById('mainimg');
-            mainImg.addEventListener('mouseover', () => {
-                mainImg.src = "src/tx2.png";
-            });
-            mainImg.addEventListener('mouseout', () => {
-                mainImg.src = "src/tx.png";
-            });
-        });
-    </script>
+  <!-- 主图标悬停切换效果和旋转效果 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImg = document.getElementById('mainimg');
+      mainImg.addEventListener('mouseover', () => {
+        mainImg.src = "src/tx2.png";
+        mainImg.classList.add('rotate');
+      });
+      mainImg.addEventListener('mouseout', () => {
+        mainImg.src = "src/tx.png";
+        mainImg.classList.remove('rotate');
+      });
+    });
+  </script>
 
-<!-- 背景切换及淡入效果（应用于 body 元素） -->
-<script>
+  <!-- 背景切换及淡入效果（应用于 body 元素） -->
+  <script>
     let currentBgIndex = 0;
-    // 将背景定义为包含图片和纯色两种类型
     const backgrounds = [
-        { type: 'image', value: "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png" },
-        { type: 'color', value: "#339999" }
+      { type: 'image', value: "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png" },
+      { type: 'color', value: "#339999" }
     ];
 
     function changeBackground() {
-        currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
-        const newBg = backgrounds[currentBgIndex];
-        const bgEl = document.getElementById('bgimg');
-        bgEl.style.opacity = 0;
-        setTimeout(() => {
-            if (newBg.type === 'image') {
-                bgEl.style.backgroundImage = `url(${newBg.value})`;
-            } else if (newBg.type === 'color') {
-                // 移除图片，直接设置背景色
-                bgEl.style.backgroundImage = '';
-                bgEl.style.backgroundColor = newBg.value;
-            }
-            bgEl.style.opacity = 1;
-        }, 500);
+      currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
+      const newBg = backgrounds[currentBgIndex];
+      const bgEl = document.getElementById('bgimg');
+      bgEl.style.opacity = 0;
+      setTimeout(() => {
+        if (newBg.type === 'image') {
+          bgEl.style.backgroundImage = `url(${newBg.value})`;
+        } else if (newBg.type === 'color') {
+          bgEl.style.backgroundImage = '';
+          bgEl.style.backgroundColor = newBg.value;
+        }
+        bgEl.style.opacity = 1;
+      }, 500);
     }
-    // 每10秒切换一次背景
     setInterval(changeBackground, 10000);
     changeBackground();
-</script>
+  </script>
 
+  <!-- 雪花效果脚本 -->
+  <script src="src/snow.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof createSnow === 'function') {
+        createSnow('src/', 60);
+      }
+    });
+  </script>
 
-
-    <!-- 雪花效果脚本 -->
-    <script src="src/snow.min.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof createSnow === 'function') {
-                createSnow('src/', 60);
-            }
-        });
-    </script>
-
-    <!-- 随机域名脚本 -->
-    <script>
-        (function() {
-            const domains = ['besnow.me', 'besnow.us'];
-            function shuffle(array) {
-                for (let i = array.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [array[i], array[j]] = [array[j], array[i]];
-                }
-                return array;
-            }
-            function randomDomain() {
-                const domain = domains[Math.floor(Math.random() * domains.length)];
-                const subdomains = [
-                    'fast', 'slow', 'happy', 'sad', 'angry', 'calm', 'bright', 'dark', 'big', 'small',
-                    'cabbage', 'spinach', 'cauliflower', 'carrot', 'eggplant', 'garlic', 'celery', 'radish',
-                    'broccoli', 'onion', 'leek', 'pepper', 'mushroom', 'pumpkin', 'bean', 'tomato',
-                    'cucumber', 'potato', 'lettuce', 'pea', 'corn', 'squash', 'zucchini', 'asparagus',
-                    'beet', 'turnip', 'parsnip', 'artichoke', 'avocado', 'mango', 'banana', 'orange',
-                    'lemon', 'lime', 'grapefruit', 'strawberry', 'blueberry', 'raspberry', 'blackberry',
-                    'cherry', 'peach', 'plum', 'apricot', 'grape', 'kiwi', 'pineapple', 'pear', 'melon',
-                    'watermelon', 'cantaloupe', 'honeydew', 'apple', 'dragonfruit', 'passionfruit',
-                    'pomegranate', 'lychee', 'papaya', 'guava', 'fig', 'date', 'coconut', 'almond', 'walnut',
-                    'peanut', 'cashew', 'pistachio', 'hazelnut', 'macadamia', 'pecan', 'brazilnut',
-                    'pine', 'oak', 'maple', 'birch', 'spruce', 'cedar', 'willow', 'ash', 'beech', 'elm'
-                ];
-                const numSubdomains = Math.floor(Math.random() * 3) + 1;
-                let selectedSubdomains = [];
-                for (let i = 0; i < numSubdomains; i++) {
-                    const randomIndex = Math.floor(Math.random() * subdomains.length);
-                    selectedSubdomains.push(subdomains[randomIndex]);
-                }
-                if (Math.random() < 0.3) {
-                    selectedSubdomains.push(Math.floor(Math.random() * 100));
-                }
-                shuffle(selectedSubdomains);
-                const subdomain = selectedSubdomains.join('');
-                return `${subdomain}.${domain}`;
-            }
-            const links = document.querySelectorAll('a.random-domain');
-            links.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href.includes('besnow.me') || href.includes('besnow.us')) {
-                    const newDomain = randomDomain();
-                    const newHref = href.replace(/(besnow\.me|besnow\.us)/, newDomain);
-                    link.setAttribute('href', newHref);
-                }
-            });
-        })();
-    </script>
+  <!-- 随机域名脚本 -->
+  <script>
+    (function() {
+      const domains = ['besnow.me', 'besnow.us'];
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+      function randomDomain() {
+        const domain = domains[Math.floor(Math.random() * domains.length)];
+        const subdomains = [
+          'fast', 'slow', 'happy', 'sad', 'angry', 'calm', 'bright', 'dark', 'big', 'small',
+          'cabbage', 'spinach', 'cauliflower', 'carrot', 'eggplant', 'garlic', 'celery', 'radish',
+          'broccoli', 'onion', 'leek', 'pepper', 'mushroom', 'pumpkin', 'bean', 'tomato',
+          'cucumber', 'potato', 'lettuce', 'pea', 'corn', 'squash', 'zucchini', 'asparagus',
+          'beet', 'turnip', 'parsnip', 'artichoke', 'avocado', 'mango', 'banana', 'orange',
+          'lemon', 'lime', 'grapefruit', 'strawberry', 'blueberry', 'raspberry', 'blackberry',
+          'cherry', 'peach', 'plum', 'apricot', 'grape', 'kiwi', 'pineapple', 'pear', 'melon',
+          'watermelon', 'cantaloupe', 'honeydew', 'apple', 'dragonfruit', 'passionfruit',
+          'pomegranate', 'lychee', 'papaya', 'guava', 'fig', 'date', 'coconut', 'almond', 'walnut',
+          'peanut', 'cashew', 'pistachio', 'hazelnut', 'macadamia', 'pecan', 'brazilnut',
+          'pine', 'oak', 'maple', 'birch', 'spruce', 'cedar', 'willow', 'ash', 'beech', 'elm'
+        ];
+        const numSubdomains = Math.floor(Math.random() * 3) + 1;
+        let selectedSubdomains = [];
+        for (let i = 0; i < numSubdomains; i++) {
+          const randomIndex = Math.floor(Math.random() * subdomains.length);
+          selectedSubdomains.push(subdomains[randomIndex]);
+        }
+        if (Math.random() < 0.3) {
+          selectedSubdomains.push(Math.floor(Math.random() * 100));
+        }
+        shuffle(selectedSubdomains);
+        const subdomain = selectedSubdomains.join('');
+        return `${subdomain}.${domain}`;
+      }
+      const links = document.querySelectorAll('a.random-domain');
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href.includes('besnow.me') || href.includes('besnow.us')) {
+          const newDomain = randomDomain();
+          const newHref = href.replace(/(besnow\.me|besnow\.us)/, newDomain);
+          link.setAttribute('href', newHref);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

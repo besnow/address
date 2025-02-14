@@ -157,25 +157,40 @@
         });
     </script>
 
-    <!-- 背景切换及淡入效果（应用于 body 元素） -->
-    <script>
-        let currentBgIndex = 0;
-        const bodyBgs = [
-            "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png"
-        ];
-        function changeBackground() {
-            currentBgIndex = (currentBgIndex + 1) % bodyBgs.length;
-            const newBg = bodyBgs[currentBgIndex];
-            const bgEl = document.getElementById('bgimg');
-            bgEl.style.opacity = 0;
-            setTimeout(() => {
-                bgEl.style.backgroundImage = `url(${newBg})`;
-                bgEl.style.opacity = 1;
-            }, 500);
-        }
-        setInterval(changeBackground, 10000);
-        changeBackground();
-    </script>
+<!-- 背景切换及淡入效果（应用于 body 元素） -->
+<script>
+    let currentBgIndex = 0;
+    // 定义背景数组：包括一张图片和一个纯色背景
+    const backgrounds = [
+        { type: 'image', value: "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png" },
+        { type: 'color', value: "#339999" }
+    ];
+
+    function changeBackground() {
+        currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
+        const newBg = backgrounds[currentBgIndex];
+        const bgEl = document.getElementById('bgimg');
+        // 开始淡出
+        bgEl.style.opacity = 0;
+        setTimeout(() => {
+            if (newBg.type === 'image') {
+                // 如果是图片，则设置背景图片，并可选地恢复默认背景色（如有需要）
+                bgEl.style.backgroundImage = `url(${newBg.value})`;
+            } else if (newBg.type === 'color') {
+                // 如果是纯色背景，移除背景图片，并设置背景颜色
+                bgEl.style.backgroundImage = '';
+                bgEl.style.backgroundColor = newBg.value;
+            }
+            // 淡入
+            bgEl.style.opacity = 1;
+        }, 500);
+    }
+    // 每10秒切换一次背景
+    setInterval(changeBackground, 10000);
+    // 初始调用
+    changeBackground();
+</script>
+
 
     <!-- 雪花效果脚本 -->
     <script src="src/snow.min.js" defer></script>

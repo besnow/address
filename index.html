@@ -31,7 +31,7 @@
       font-family: 'Roboto', sans-serif;
       color: #fff;
     }
-    /* 将背景及过渡效果应用到 body 元素 */
+    /* 背景及过渡效果 */
     body#bgimg {
       background-size: cover;
       background-position: center;
@@ -98,31 +98,39 @@
     #top_footer span a:hover {
       border-color: #fff;
     }
-    /* 移动端样式 */
-    @media (max-width: 480px) {
-      #top_logo #mainimg {
-        width: 80px;
-      }
-      #top_title #logoTitle {
-        width: 60%;
-      }
-      .showcase-examples a.button {
-        font-size: 0.85rem;
-        margin-bottom: 8px;
-      }
-    }
     /* 主图标旋转动画 */
     @keyframes rotateAnimation {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
-    /* 默认缓慢旋转（10s 完成一圈） */
     .rotate {
       animation: rotateAnimation 10s linear infinite;
     }
-    /* 鼠标悬停时暂停旋转 */
     #mainimg:hover {
       animation-play-state: paused;
+    }
+    /* 移动端样式（基于1080×1920设计，竖屏） */
+    @media (max-width: 1080px) and (orientation: portrait) {
+      /* 增大图标尺寸，便于在大屏竖版中展示 */
+      #top_logo #mainimg {
+        width: 200px;
+      }
+      /* 调整标题图片尺寸 */
+      #top_title #logoTitle {
+        width: 50%;
+      }
+      /* 按钮容器采用 flex 垂直排列 */
+      .showcase-examples {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .showcase-examples a.button {
+        font-size: 1.1rem;
+        margin: 12px 0;  /* 增加垂直间距 */
+        width: 80%;      /* 按钮宽度占容器80% */
+        padding: 12px 20px;
+      }
     }
   </style>
 </head>
@@ -153,7 +161,7 @@
     </span>
   </footer>
 
-  <!-- 主图标悬停时切换图片（旋转效果由 CSS 控制） -->
+  <!-- 主图标悬停切换图片（旋转效果由 CSS 控制） -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const mainImg = document.getElementById('mainimg');
@@ -166,7 +174,7 @@
     });
   </script>
 
-  <!-- 背景切换及淡入效果（应用于 body 元素） -->
+  <!-- 背景切换及淡入效果 -->
   <script>
     let currentBgIndex = 0;
     const backgrounds = [
@@ -193,7 +201,7 @@
     changeBackground();
   </script>
 
-  <!-- 雪花效果脚本 -->
+  <!-- 雪花效果 -->
   <script src="src/snow.min.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -215,7 +223,6 @@
         return array;
       }
       function randomDomain() {
-        const domain = domains[Math.floor(Math.random() * domains.length)];
         const subdomains = [
           'fast', 'slow', 'happy', 'sad', 'angry', 'calm', 'bright', 'dark', 'big', 'small',
           'cabbage', 'spinach', 'cauliflower', 'carrot', 'eggplant', 'garlic', 'celery', 'radish',

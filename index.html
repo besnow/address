@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
+  <!-- 视口适配移动端 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>最新地址发布</title>
   <meta name="description" content="最新地址发布">
@@ -31,14 +32,16 @@
       font-family: 'Roboto', sans-serif;
       color: #fff;
     }
+
     /* 背景及过渡效果 */
     body#bgimg {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #000;
+      background-color: #008080; /* 可根据需求修改或使用背景图 */
       transition: opacity 0.5s ease-in-out;
     }
+
     /* 主体内容居中 */
     #top_main {
       display: flex;
@@ -49,6 +52,7 @@
       text-align: center;
       padding: 20px;
     }
+
     /* LOGO 图标及基础效果 */
     #top_logo #mainimg {
       width: 120px;
@@ -56,12 +60,14 @@
       cursor: pointer;
       transition: transform 0.3s;
     }
+
     /* 网站标题 */
     #top_title #logoTitle {
       width: 30%;
       height: auto;
       margin: 20px 0;
     }
+
     /* 按钮样式 */
     .showcase-examples {
       margin-top: 20px;
@@ -73,11 +79,19 @@
       transition: background-color 0.3s, color 0.3s;
       font-size: 0.95rem;
       padding: 10px 16px;
+      border-radius: 6px;
+
+      /* 关键：强制单行、不换行，超出部分省略号 */
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .showcase-examples a.button:hover {
       background-color: #fff !important;
       color: #000 !important;
     }
+
     /* 底部样式 */
     #top_footer {
       text-align: center;
@@ -98,6 +112,7 @@
     #top_footer span a:hover {
       border-color: #fff;
     }
+
     /* 主图标旋转动画 */
     @keyframes rotateAnimation {
       from { transform: rotate(0deg); }
@@ -109,27 +124,42 @@
     #mainimg:hover {
       animation-play-state: paused;
     }
-    /* 移动端样式（基于1080×1920设计，竖屏） */
+
+    /*
+      移动端样式（基于1080×1920竖屏）
+      这里用 (max-width: 1080px) + 竖屏条件 (orientation: portrait) 来控制
+    */
     @media (max-width: 1080px) and (orientation: portrait) {
-      /* 增大图标尺寸，便于在大屏竖版中展示 */
+      /* 适度增大图标 */
       #top_logo #mainimg {
-        width: 200px;
+        width: 180px;
+        margin-top: 40px;
       }
-      /* 调整标题图片尺寸 */
+      /* 调整标题尺寸及间距 */
       #top_title #logoTitle {
         width: 50%;
+        margin: 30px 0;
       }
       /* 按钮容器采用 flex 垂直排列 */
       .showcase-examples {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 30px; /* 与标题保持更大间距 */
       }
       .showcase-examples a.button {
         font-size: 1.1rem;
-        margin: 12px 0;  /* 增加垂直间距 */
-        width: 80%;      /* 按钮宽度占容器80% */
-        padding: 12px 20px;
+        margin: 15px 0;       /* 垂直间距 */
+        width: 80%;           /* 固定按钮宽度，让其更整齐 */
+        max-width: 400px;     /* 限制按钮最大宽度，避免过宽 */
+        padding: 14px 24px;   /* 增加触控区域 */
+        border-radius: 8px;   /* 更明显的圆角 */
+
+        /* 保持单行文字 + 省略号 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
       }
     }
   </style>
@@ -145,11 +175,30 @@
         <img src="src/logo09.png" alt="网站标题" id="logoTitle">
       </div>
       <div class="showcase-examples l-over l-center">
-        <a href="https://www.besnow.org" title="官方网站" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">官方网站</a>
-        <a href="https://besnow.me" title="国内入口1" class="button random-domain button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">国内入口1</a>
-        <a href="https://besnow.us" title="国内入口2" class="button random-domain button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">国内入口2</a>
-        <a href="https://t.me/Besnow_L" title="官方群组" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">官方群组</a>
-        <a href="https://t.me/Besnow_Cloud" title="公告频道" class="button button-rounded button-plain button-small-caps button-border" target="_blank" rel="noopener noreferrer">公告频道</a>
+        <a href="https://www.besnow.org"
+           title="官方网站"
+           class="button button-rounded button-plain button-small-caps button-border"
+           target="_blank" rel="noopener noreferrer">官方网站</a>
+
+        <a href="https://besnow.me"
+           title="国内入口1"
+           class="button random-domain button-rounded button-plain button-small-caps button-border"
+           target="_blank" rel="noopener noreferrer">国内入口1</a>
+
+        <a href="https://besnow.us"
+           title="国内入口2"
+           class="button random-domain button-rounded button-plain button-small-caps button-border"
+           target="_blank" rel="noopener noreferrer">国内入口2</a>
+
+        <a href="https://t.me/Besnow_L"
+           title="官方群组"
+           class="button button-rounded button-plain button-small-caps button-border"
+           target="_blank" rel="noopener noreferrer">官方群组</a>
+
+        <a href="https://t.me/Besnow_Cloud"
+           title="公告频道"
+           class="button button-rounded button-plain button-small-caps button-border"
+           target="_blank" rel="noopener noreferrer">公告频道</a>
       </div>
     </main>
   </div>
@@ -161,7 +210,7 @@
     </span>
   </footer>
 
-  <!-- 主图标悬停切换图片（旋转效果由 CSS 控制） -->
+  <!-- 主图标悬停时切换图片（旋转效果由 CSS 控制） -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const mainImg = document.getElementById('mainimg');
@@ -174,7 +223,7 @@
     });
   </script>
 
-  <!-- 背景切换及淡入效果 -->
+  <!-- 背景切换及淡入效果（应用于 body 元素） -->
   <script>
     let currentBgIndex = 0;
     const backgrounds = [
@@ -201,7 +250,7 @@
     changeBackground();
   </script>
 
-  <!-- 雪花效果 -->
+  <!-- 雪花效果脚本 -->
   <script src="src/snow.min.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -242,6 +291,7 @@
           const randomIndex = Math.floor(Math.random() * subdomains.length);
           selectedSubdomains.push(subdomains[randomIndex]);
         }
+        // 30% 概率添加随机数字
         if (Math.random() < 0.3) {
           selectedSubdomains.push(Math.floor(Math.random() * 100));
         }

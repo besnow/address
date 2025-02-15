@@ -32,7 +32,6 @@
       font-family: 'Roboto', sans-serif;
       color: #fff;
     }
-
     /* 背景及过渡效果 */
     body#bgimg {
       background-size: cover;
@@ -41,7 +40,6 @@
       background-color: #008080; /* 可根据需求修改或使用背景图 */
       transition: opacity 0.5s ease-in-out;
     }
-
     /* 主体内容居中 */
     #top_main {
       display: flex;
@@ -52,7 +50,6 @@
       text-align: center;
       padding: 20px;
     }
-
     /* LOGO 图标及基础效果 */
     #top_logo #mainimg {
       width: 120px;
@@ -60,14 +57,12 @@
       cursor: pointer;
       transition: transform 0.3s;
     }
-
     /* 网站标题 */
     #top_title #logoTitle {
       width: 30%;
       height: auto;
       margin: 20px 0;
     }
-
     /* 按钮样式 */
     .showcase-examples {
       margin-top: 20px;
@@ -80,8 +75,7 @@
       font-size: 0.95rem;
       padding: 10px 16px;
       border-radius: 6px;
-
-      /* 关键：强制单行、不换行，超出部分省略号 */
+      /* 默认设置：保证单行显示，超出部分显示为省略号 */
       display: inline-block;
       white-space: nowrap;
       overflow: hidden;
@@ -91,7 +85,6 @@
       background-color: #fff !important;
       color: #000 !important;
     }
-
     /* 底部样式 */
     #top_footer {
       text-align: center;
@@ -112,7 +105,6 @@
     #top_footer span a:hover {
       border-color: #fff;
     }
-
     /* 主图标旋转动画 */
     @keyframes rotateAnimation {
       from { transform: rotate(0deg); }
@@ -124,11 +116,7 @@
     #mainimg:hover {
       animation-play-state: paused;
     }
-
-    /*
-      移动端样式（基于1080×1920竖屏）
-      这里用 (max-width: 1080px) + 竖屏条件 (orientation: portrait) 来控制
-    */
+    /* 移动端样式（基于1080×1920竖屏） */
     @media (max-width: 1080px) and (orientation: portrait) {
       /* 适度增大图标 */
       #top_logo #mainimg {
@@ -150,15 +138,16 @@
       .showcase-examples a.button {
         font-size: 1.1rem;
         margin: 15px 0;       /* 垂直间距 */
-        width: 80%;           /* 固定按钮宽度，让其更整齐 */
-        max-width: 400px;     /* 限制按钮最大宽度，避免过宽 */
+        /* 使用 min-width 保证短文字按钮占据一定宽度，
+           长文字时按钮宽度自动扩展以完整显示文字 */
+        min-width: 80%;
         padding: 14px 24px;   /* 增加触控区域 */
         border-radius: 8px;   /* 更明显的圆角 */
-
-        /* 保持单行文字 + 省略号 */
+        /* 依然保证单行显示 */
         white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        /* 取消截断效果，让文字完整显示 */
+        overflow: visible;
+        text-overflow: unset;
         display: inline-block;
       }
     }
@@ -181,9 +170,9 @@
            target="_blank" rel="noopener noreferrer">官方网站</a>
 
         <a href="https://besnow.me"
-           title="国内入口1"
+           title="国内入口1 这是一段可能很长的文字示例，用来测试按钮文字完整显示效果"
            class="button random-domain button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">国内入口1</a>
+           target="_blank" rel="noopener noreferrer">国内入口1 这是一段可能很长的文字示例，用来测试按钮文字完整显示效果</a>
 
         <a href="https://besnow.us"
            title="国内入口2"
@@ -230,7 +219,6 @@
       { type: 'image', value: "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png" },
       { type: 'color', value: "#339999" }
     ];
-
     function changeBackground() {
       currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
       const newBg = backgrounds[currentBgIndex];

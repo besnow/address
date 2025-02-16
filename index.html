@@ -34,10 +34,11 @@
     }
     /* 背景及过渡效果 */
     body#bgimg {
-      background-size: cover;          /* 默认PC端使用cover */
+      /* PC端/大屏使用 cover，保证视觉铺满，但可能会裁切 */
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #008080;       /* 可根据需求修改或使用背景图 */
+      background-color: #008080;
       transition: opacity 0.5s ease-in-out;
     }
     /* 主体内容居中 */
@@ -116,7 +117,7 @@
       animation-play-state: paused;
     }
 
-    /* 移动端样式（基于1080×1920竖屏） */
+    /* ================== 移动端样式 ================== */
     @media (max-width: 1080px) and (orientation: portrait) {
       /* 适度增大图标 */
       #top_logo #mainimg {
@@ -147,13 +148,13 @@
         display: inline-block;
       }
 
-      /* ========= 在移动端完整显示背景图 ========== */
+      /* ======== 移动端强制铺满屏幕，允许拉伸变形 ======== */
       body#bgimg {
-        background-size: contain;      /* 改为contain，保证不被裁切 */
-        background-position: center;   /* 居中显示 */
-        background-repeat: no-repeat;  /* 禁止平铺 */
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
       }
-      /* 如果不想太高，可去掉或缩小min-height */
+      /* 如果不想页面过高，可去掉或缩小 min-height */
       #top_main {
         min-height: auto;
       }

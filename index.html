@@ -32,15 +32,15 @@
       font-family: 'Roboto', sans-serif;
       color: #fff;
     }
-    /* 背景及过渡效果 */
+    /* ====== 全局背景，统一拉伸铺满 ====== */
     body#bgimg {
-      /* PC端/大屏使用 cover，保证视觉铺满，但可能会裁切 */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: #008080;
+      background-size: 100% 100%;      /* 强制拉伸，无论什么设备 */
+      background-position: center;     /* 居中 */
+      background-repeat: no-repeat;    /* 不平铺 */
+      background-color: #008080;       /* 备用纯色 */
       transition: opacity 0.5s ease-in-out;
     }
+
     /* 主体内容居中 */
     #top_main {
       display: flex;
@@ -117,47 +117,37 @@
       animation-play-state: paused;
     }
 
-    /* ================== 移动端样式 ================== */
+    /* 移动端样式（原先的按钮、图标放大等保留） */
     @media (max-width: 1080px) and (orientation: portrait) {
-      /* 适度增大图标 */
       #top_logo #mainimg {
         width: 180px;
         margin-top: 40px;
       }
-      /* 调整标题尺寸及间距 */
       #top_title #logoTitle {
         width: 50%;
         margin: 30px 0;
       }
-      /* 按钮容器采用 flex 垂直排列 */
       .showcase-examples {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 30px; /* 与标题保持更大间距 */
+        margin-top: 30px;
       }
       .showcase-examples a.button {
         font-size: 1.1rem;
-        margin: 15px 0;       /* 垂直间距 */
+        margin: 15px 0;
         min-width: 80%;
-        padding: 14px 24px;   /* 增加触控区域 */
-        border-radius: 8px;   /* 更明显的圆角 */
+        padding: 14px 24px;
+        border-radius: 8px;
         white-space: nowrap;
         overflow: visible;
         text-overflow: unset;
         display: inline-block;
       }
 
-      /* ======== 移动端强制铺满屏幕，允许拉伸变形 ======== */
-      body#bgimg {
-        background-size: 100% 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      /* 如果不想页面过高，可去掉或缩小 min-height */
-      #top_main {
-        min-height: auto;
-      }
+      /* 这里不再覆盖 background-size, 保持100% 100% */
+      /* #bgimg { background-size: 100% 100%; } */
+      /* #top_main { min-height: auto; } */
     }
   </style>
 </head>

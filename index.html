@@ -34,10 +34,10 @@
     }
     /* 背景及过渡效果 */
     body#bgimg {
-      background-size: cover;
+      background-size: cover;          /* 默认PC端使用cover */
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #008080; /* 可根据需求修改或使用背景图 */
+      background-color: #008080;       /* 可根据需求修改或使用背景图 */
       transition: opacity 0.5s ease-in-out;
     }
     /* 主体内容居中 */
@@ -75,7 +75,6 @@
       font-size: 0.95rem;
       padding: 10px 16px;
       border-radius: 6px;
-      /* 默认设置：保证单行显示，超出部分显示为省略号 */
       display: inline-block;
       white-space: nowrap;
       overflow: hidden;
@@ -116,6 +115,7 @@
     #mainimg:hover {
       animation-play-state: paused;
     }
+
     /* 移动端样式（基于1080×1920竖屏） */
     @media (max-width: 1080px) and (orientation: portrait) {
       /* 适度增大图标 */
@@ -138,17 +138,24 @@
       .showcase-examples a.button {
         font-size: 1.1rem;
         margin: 15px 0;       /* 垂直间距 */
-        /* 使用 min-width 保证短文字按钮占据一定宽度，
-           长文字时按钮宽度自动扩展以完整显示文字 */
         min-width: 80%;
         padding: 14px 24px;   /* 增加触控区域 */
         border-radius: 8px;   /* 更明显的圆角 */
-        /* 依然保证单行显示 */
         white-space: nowrap;
-        /* 取消截断效果，让文字完整显示 */
         overflow: visible;
         text-overflow: unset;
         display: inline-block;
+      }
+
+      /* ========= 在移动端完整显示背景图 ========== */
+      body#bgimg {
+        background-size: contain;      /* 改为contain，保证不被裁切 */
+        background-position: center;   /* 居中显示 */
+        background-repeat: no-repeat;  /* 禁止平铺 */
+      }
+      /* 如果不想太高，可去掉或缩小min-height */
+      #top_main {
+        min-height: auto;
       }
     }
   </style>

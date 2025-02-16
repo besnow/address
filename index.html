@@ -32,12 +32,9 @@
       font-family: 'Roboto', sans-serif;
       color: #fff;
     }
-    /* ====== 全局背景，统一拉伸铺满 ====== */
-    body#bgimg {
-      background-size: 100% 100%;      /* 强制拉伸，无论什么设备 */
-      background-position: center;     /* 居中 */
-      background-repeat: no-repeat;    /* 不平铺 */
-      background-color: #008080;       /* 备用纯色 */
+    /* 全局背景：使用纯色 #339999 */
+    body#bg {
+      background-color: #339999;
       transition: opacity 0.5s ease-in-out;
     }
 
@@ -117,7 +114,7 @@
       animation-play-state: paused;
     }
 
-    /* 移动端样式（原先的按钮、图标放大等保留） */
+    /* 移动端样式（保留原先的按钮、图标放大等） */
     @media (max-width: 1080px) and (orientation: portrait) {
       #top_logo #mainimg {
         width: 180px;
@@ -144,18 +141,14 @@
         text-overflow: unset;
         display: inline-block;
       }
-
-      /* 这里不再覆盖 background-size, 保持100% 100% */
-      /* #bgimg { background-size: 100% 100%; } */
-      /* #top_main { min-height: auto; } */
     }
   </style>
 </head>
-<body id="bgimg">
+<body id="bg">
   <div id="top">
     <main id="top_main">
       <div id="top_logo">
-        <!-- 默认带有 rotate 类，持续旋转 -->
+        <!-- 主图标（旋转效果由 CSS 控制） -->
         <img src="src/tx.png" alt="主图标" id="mainimg" class="rotate">
       </div>
       <div id="top_title">
@@ -207,42 +200,6 @@
       mainImg.addEventListener('mouseout', () => {
         mainImg.src = "src/tx.png";
       });
-    });
-  </script>
-
-  <!-- 背景切换及淡入效果（应用于 body 元素） -->
-  <script>
-    let currentBgIndex = 0;
-    const backgrounds = [
-      { type: 'image', value: "https://s2.loli.net/2022/05/16/yOe4djW31gwKhqn.png" },
-      { type: 'color', value: "#339999" }
-    ];
-    function changeBackground() {
-      currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
-      const newBg = backgrounds[currentBgIndex];
-      const bgEl = document.getElementById('bgimg');
-      bgEl.style.opacity = 0;
-      setTimeout(() => {
-        if (newBg.type === 'image') {
-          bgEl.style.backgroundImage = `url(${newBg.value})`;
-        } else if (newBg.type === 'color') {
-          bgEl.style.backgroundImage = '';
-          bgEl.style.backgroundColor = newBg.value;
-        }
-        bgEl.style.opacity = 1;
-      }, 500);
-    }
-    setInterval(changeBackground, 10000);
-    changeBackground();
-  </script>
-
-  <!-- 雪花效果脚本 -->
-  <script src="src/snow.min.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (typeof createSnow === 'function') {
-        createSnow('src/', 60);
-      }
     });
   </script>
 

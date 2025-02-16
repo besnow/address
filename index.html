@@ -67,9 +67,11 @@
     }
     .showcase-examples a.button {
       margin: 0 10px 10px;
-      border-color: #fff !important;
+      /* 添加边框及阴影效果 */
+      border: 2px solid #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       color: #fff !important;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
       font-size: 0.95rem;
       padding: 10px 16px;
       border-radius: 6px;
@@ -81,6 +83,7 @@
     .showcase-examples a.button:hover {
       background-color: #fff !important;
       color: #000 !important;
+      border-color: #000 !important;
     }
     /* 底部样式 */
     #top_footer {

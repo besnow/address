@@ -119,18 +119,21 @@
       margin: 20px auto 0;
       width: var(--content-width);
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-wrap: nowrap;
+      justify-content: space-between;
       gap: 12px;
+      align-items: stretch;
     }
     .showcase-examples a.button {
       margin: 0;
+      flex: 1 1 0;
+      min-width: 0;
       /* 添加边框 */
       border: 2px solid #fff;
       color: #fff !important;
       transition: background-color 0.3s, color 0.3s, border-color 0.3s;
       font-size: 0.95rem;
-      padding: 10px 16px;
+      padding: 12px 16px;
       border-radius: 6px;
       /* 关键：使用 inline-flex 并居中对齐 */
       display: inline-flex;
@@ -201,13 +204,14 @@
       .showcase-examples {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         margin-top: 30px;
+        gap: 14px;
       }
       .showcase-examples a.button {
         font-size: 1.1rem;
-        margin: 15px 0;
-        min-width: 80%;
+        margin: 0;
+        min-width: 100%;
         padding: 14px 24px;
         border-radius: 8px;
         white-space: nowrap;
@@ -237,31 +241,31 @@
       <h1 class="page-title">Besnow Cloud 贝雪云｜官方地址发布页（备用网址与入口导航）</h1>
       <div class="showcase-examples l-over l-center" aria-label="Besnow Cloud 官方访问入口">
         <a href="https://besnow.org/"
-           title="Besnow Cloud 官网（besnow.org）"
+           title="Besnow Cloud 官网（besnow.org）官方网址"
            class="button button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">Besnow Cloud 官网（besnow.org）</a>
+           target="_blank" rel="noopener noreferrer">官方网站</a>
 
         <a href="https://besnow.me/"
            title="Besnow Cloud 备用网址Ⅰ（besnow.me，点击后自动分配可用入口）"
            class="button random-domain button-rounded button-plain button-small-caps button-border"
            data-base="besnow.me"
-           target="_blank" rel="noopener noreferrer">备用网址Ⅰ（besnow.me）</a>
+           target="_blank" rel="noopener noreferrer">备用地址Ⅰ</a>
 
         <a href="https://besnow.us/"
            title="Besnow Cloud 备用网址Ⅱ（besnow.us，点击后自动分配可用入口）"
            class="button random-domain button-rounded button-plain button-small-caps button-border"
            data-base="besnow.us"
-           target="_blank" rel="noopener noreferrer">备用网址Ⅱ（besnow.us）</a>
+           target="_blank" rel="noopener noreferrer">备用地址Ⅱ</a>
 
         <a href="https://t.me/Besnow_L"
            title="Besnow Cloud 官方群组（Telegram）"
            class="button button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">Telegram 官方群组</a>
+           target="_blank" rel="noopener noreferrer">官方群组</a>
 
         <a href="https://t.me/Besnow_Cloud"
            title="Besnow Cloud 公告频道（Telegram）"
            class="button button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">Telegram 公告频道</a>
+           target="_blank" rel="noopener noreferrer">公告频道</a>
       </div>
 
 
@@ -340,11 +344,6 @@
         const subdomain = generateRandomSubdomain();
         const newHref = `https://${subdomain}.${base}/`;
         link.href = newHref;
-        if (link.textContent.includes('备用网址Ⅰ')) {
-          link.textContent = `备用网址Ⅰ（${subdomain}.${base}）`;
-        } else if (link.textContent.includes('备用网址Ⅱ')) {
-          link.textContent = `备用网址Ⅱ（${subdomain}.${base}）`;
-        }
       }
 
       function handleActivation(event) {

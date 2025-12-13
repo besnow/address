@@ -28,6 +28,10 @@
 
   <!-- 内联样式 -->
   <style>
+    :root {
+      --content-width: min(980px, calc(100% - 40px));
+    }
+
     /* 全局基础样式 */
     * {
       margin: 0;
@@ -81,7 +85,7 @@
       letter-spacing: 0.5px;
     }
     .content-wrap {
-      max-width: 960px;
+      width: var(--content-width);
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 14px;
@@ -112,10 +116,15 @@
       color: #f0f9f9;
     }
     .showcase-examples {
-      margin-top: 20px;
+      margin: 20px auto 0;
+      width: var(--content-width);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
     }
     .showcase-examples a.button {
-      margin: 0 10px 10px;
+      margin: 0;
       /* 添加边框 */
       border: 2px solid #fff;
       color: #fff !important;

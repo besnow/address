@@ -46,6 +46,17 @@
       transition: opacity 0.5s ease-in-out;
     }
 
+    /* 顶部角落品牌标识 */
+    .top-bar {
+      position: fixed;
+      top: 14px;
+      left: 16px;
+      z-index: 20;
+    }
+    .brand-mark img {
+      width: 140px;
+      height: auto;
+    }
     /* 主体内容居中 */
     #top_main {
       display: flex;
@@ -62,12 +73,6 @@
       height: auto;
       cursor: pointer;
       transition: transform 0.3s;
-    }
-    /* 网站标题 */
-    #top_title #logoTitle {
-      width: 30%;
-      height: auto;
-      margin: 20px 0;
     }
     .page-title {
       font-size: 1.7rem;
@@ -92,28 +97,6 @@
     .content-wrap strong {
       color: #fff;
     }
-    .sections-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
-    .section-card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 10px;
-      padding: 16px;
-    }
-    .section-card h2 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    .section-card ul {
-      padding-left: 18px;
-      color: #e7f6f6;
-    }
-    .section-card li { margin-bottom: 8px; }
     .faq details {
       margin-bottom: 10px;
       background: rgba(255, 255, 255, 0.06);
@@ -186,22 +169,22 @@
 
     /* 移动端样式（保留原先的按钮、图标放大等） */
     @media (max-width: 1080px) and (orientation: portrait) {
+      .top-bar {
+        top: 10px;
+        left: 12px;
+      }
+      .brand-mark img {
+        width: 120px;
+      }
       #top_logo #mainimg {
         width: 180px;
-        margin-top: 40px;
-      }
-      #top_title #logoTitle {
-        width: 50%;
-        margin: 30px 0;
+        margin-top: 60px;
       }
       .page-title {
         font-size: 1.4rem;
       }
       .content-wrap {
         padding: 20px 16px;
-      }
-      .sections-grid {
-        grid-template-columns: 1fr;
       }
       .showcase-examples {
         display: flex;
@@ -228,14 +211,16 @@
   </style>
 </head>
 <body id="bg">
+  <header class="top-bar" aria-label="Besnow Cloud 品牌标识">
+    <a class="brand-mark" href="https://address.besnow.xyz/" title="返回 Besnow Cloud 地址发布页">
+      <img src="src/logo09.png" alt="Besnow Cloud 官方地址发布页标识" id="logoTitle">
+    </a>
+  </header>
   <div id="top">
     <main id="top_main">
       <div id="top_logo">
         <!-- 主图标（旋转效果由 CSS 控制） -->
         <img src="src/tx.png" alt="Besnow Cloud 贝雪云 Logo" id="mainimg" class="rotate">
-      </div>
-      <div id="top_title">
-        <img src="src/logo09.png" alt="Besnow Cloud 官方地址发布页" id="logoTitle">
       </div>
       <h1 class="page-title">Besnow Cloud 贝雪云｜官方地址发布页（备用网址与入口导航）</h1>
       <div class="content-wrap">
@@ -272,42 +257,30 @@
            target="_blank" rel="noopener noreferrer">Telegram 公告频道</a>
       </div>
 
-      <div class="sections-grid">
-        <section class="section-card" aria-labelledby="verify-title">
-          <h2 id="verify-title">如何验证这是官方页面</h2>
-          <ul>
-            <li>核对域名：仅信任 <strong>address.besnow.xyz</strong> 发布入口，官网域为 <strong>besnow.org</strong>，备用网址为 <strong>besnow.me / besnow.us</strong>。</li>
-            <li>确认 HTTPS：浏览器地址栏需出现锁标志或证书有效提示，拒绝访问不安全连接。</li>
-            <li>对照公告：以 Telegram 公告频道置顶或最新消息为准，避免点击来路不明的短链。</li>
-            <li>警惕私信：官方不会索取密码或验证码，若收到可疑链接请回到本页核验。</li>
-            <li>收藏本页：Ctrl+D / ⌘+D 收藏，遇到打不开可刷新或切换网络后重试。</li>
-          </ul>
-        </section>
 
-        <section class="section-card faq" aria-labelledby="faq-title">
-          <h2 id="faq-title">常见问题 FAQ</h2>
-          <details>
-            <summary>打不开官网怎么办？</summary>
-            <p>请依次尝试备用网址Ⅰ（besnow.me）和备用网址Ⅱ（besnow.us），二者会在点击时自动分配可用子域入口；也可以切换网络或使用加速工具后重试。</p>
-          </details>
-          <details>
-            <summary>为什么需要地址发布页？</summary>
-            <p>部分地区可能暂时屏蔽主域名。地址发布页集中公布官方入口与最新公告，让用户在无法访问时仍可找到可信赖的备用通道。</p>
-          </details>
-          <details>
-            <summary>如何收藏以防丢失？</summary>
-            <p>在电脑按 Ctrl+D（Mac 按 ⌘+D）即可收藏本页，移动端可使用浏览器的“添加到主屏幕/书签”功能，建议定期打开确认更新。</p>
-          </details>
-          <details>
-            <summary>备用网址多久更新一次？</summary>
-            <p>当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，确保有更高命中率。</p>
-          </details>
-          <details>
-            <summary>怎样确认不是钓鱼站？</summary>
-            <p>务必核对域名是否包含 besnow.org、besnow.me、besnow.us，并查看 HTTPS 证书是否有效，再对照 Telegram 公告频道的置顶信息确认。</p>
-          </details>
-        </section>
-      </div>
+      <section class="content-wrap faq" aria-labelledby="faq-title">
+        <h2 id="faq-title" style="text-align: center; margin-bottom: 12px;">常见问题 FAQ</h2>
+        <details>
+          <summary>打不开官网怎么办？</summary>
+          <p>请依次尝试备用网址Ⅰ（besnow.me）和备用网址Ⅱ（besnow.us），二者会在点击时自动分配可用子域入口；也可以切换网络或使用加速工具后重试。</p>
+        </details>
+        <details>
+          <summary>为什么需要地址发布页？</summary>
+          <p>部分地区可能暂时屏蔽主域名。地址发布页集中公布官方入口与最新公告，让用户在无法访问时仍可找到可信赖的备用通道，并降低搜到钓鱼站的风险。</p>
+        </details>
+        <details>
+          <summary>如何验证这是官方页面？</summary>
+          <p>请核对域名只包含 address.besnow.xyz（发布页）、besnow.org（官网）、besnow.me / besnow.us（备用网址），并确认浏览器出现 HTTPS 锁标志或证书有效提示。公告以 Telegram 频道置顶/最新消息为准，官方不会私信索取密码或验证码，遇到可疑链接请回到本页核验。</p>
+        </details>
+        <details>
+          <summary>如何收藏以防丢失？</summary>
+          <p>在电脑按 Ctrl+D（Mac 按 ⌘+D）即可收藏本页，移动端可使用浏览器的“添加到主屏幕/书签”功能，建议定期打开确认更新并同步保存 Telegram 公告频道。</p>
+        </details>
+        <details>
+          <summary>备用网址多久更新一次？</summary>
+          <p>当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，提升命中率，必要时可刷新重试。</p>
+        </details>
+      </section>
     </main>
   </div>
 
@@ -419,7 +392,15 @@
               "name": "为什么需要地址发布页？",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "部分地区可能暂时屏蔽主域名。地址发布页集中公布官方入口与最新公告，让用户在无法访问时仍可找到可信赖的备用通道。"
+                "text": "部分地区可能暂时屏蔽主域名。地址发布页集中公布官方入口与最新公告，让用户在无法访问时仍可找到可信赖的备用通道，并降低搜到钓鱼站的风险。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "如何验证这是官方页面？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "请核对域名只包含 address.besnow.xyz（发布页）、besnow.org（官网）、besnow.me / besnow.us（备用网址），并确认浏览器出现 HTTPS 锁标志或证书有效提示。公告以 Telegram 频道置顶/最新消息为准，官方不会私信索取密码或验证码，遇到可疑链接请回到本页核验。"
               }
             },
             {
@@ -427,7 +408,7 @@
               "name": "如何收藏以防丢失？",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "在电脑按 Ctrl+D（Mac 按 ⌘+D）即可收藏本页，移动端可使用浏览器的“添加到主屏幕/书签”功能，建议定期打开确认更新。"
+                "text": "在电脑按 Ctrl+D（Mac 按 ⌘+D）即可收藏本页，移动端可使用浏览器的“添加到主屏幕/书签”功能，建议定期打开确认更新并同步保存 Telegram 公告频道。"
               }
             },
             {
@@ -435,15 +416,7 @@
               "name": "备用网址多久更新一次？",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，确保有更高命中率。"
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "怎样确认不是钓鱼站？",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "务必核对域名是否包含 besnow.org、besnow.me、besnow.us，并查看 HTTPS 证书是否有效，再对照 Telegram 公告频道的置顶信息确认。"
+                "text": "当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，提升命中率，必要时可刷新重试。"
               }
             }
           ]

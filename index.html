@@ -79,10 +79,22 @@
       transition: transform 0.3s;
     }
     .page-title {
-      font-size: 1.7rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
       margin: 10px 0 18px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+    }
+    .page-title h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+    }
+    .page-title h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      opacity: 0.95;
+      letter-spacing: 0.2px;
     }
     .content-wrap {
       width: var(--content-width);
@@ -195,8 +207,11 @@
         width: 180px;
         margin-top: 60px;
       }
-      .page-title {
-        font-size: 1.4rem;
+      .page-title h1 {
+        font-size: 1.6rem;
+      }
+      .page-title h2 {
+        font-size: 1.05rem;
       }
       .content-wrap {
         padding: 20px 16px;
@@ -238,34 +253,37 @@
         <!-- 主图标（旋转效果由 CSS 控制） -->
         <img src="src/tx.png" alt="Besnow Cloud 贝雪云 Logo" id="mainimg" class="rotate">
       </div>
-      <h1 class="page-title">Besnow Cloud 贝雪云｜官方地址发布页（备用网址与入口导航）</h1>
+      <div class="page-title">
+        <h1>Besnow Cloud 贝雪云</h1>
+        <h2>官方地址发布页（备用网址与入口导航）</h2>
+      </div>
       <div class="showcase-examples l-over l-center" aria-label="Besnow Cloud 官方访问入口">
         <a href="https://besnow.org/"
            title="Besnow Cloud 官网（besnow.org）官方网址"
            class="button button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">官方网站</a>
+           target="_blank" rel="noopener noreferrer">官方網址</a>
 
         <a href="https://besnow.me/"
            title="Besnow Cloud 备用网址Ⅰ（besnow.me，点击后自动分配可用入口）"
            class="button random-domain button-rounded button-plain button-small-caps button-border"
            data-base="besnow.me"
-           target="_blank" rel="noopener noreferrer">备用地址Ⅰ</a>
+           target="_blank" rel="noopener noreferrer">備用地址Ⅰ</a>
 
         <a href="https://besnow.us/"
            title="Besnow Cloud 备用网址Ⅱ（besnow.us，点击后自动分配可用入口）"
            class="button random-domain button-rounded button-plain button-small-caps button-border"
            data-base="besnow.us"
-           target="_blank" rel="noopener noreferrer">备用地址Ⅱ</a>
+           target="_blank" rel="noopener noreferrer">備用地址Ⅱ</a>
 
         <a href="https://t.me/Besnow_L"
            title="Besnow Cloud 官方群组（Telegram）"
            class="button button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">官方群组</a>
+           target="_blank" rel="noopener noreferrer">官方群組</a>
 
         <a href="https://t.me/Besnow_Cloud"
            title="Besnow Cloud 公告频道（Telegram）"
            class="button button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">公告频道</a>
+           target="_blank" rel="noopener noreferrer">公告頻道</a>
       </div>
 
 
@@ -292,6 +310,14 @@
         <details>
           <summary>备用网址多久更新一次？</summary>
           <p>当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，提升命中率，必要时可刷新重试。</p>
+        </details>
+        <details>
+          <summary>点击后出现随机子域是否安全？</summary>
+          <p>备用地址Ⅰ/Ⅱ 在点击时才会生成随机子域并自动跳转，所有子域均指向 besnow.me 或 besnow.us 主域下的官方节点，并保持 HTTPS 证书校验。请确认浏览器的锁标记正常，若提示证书异常请立即停止访问并回到本页或 Telegram 公告频道核对。</p>
+        </details>
+        <details>
+          <summary>官方公告和群组在哪里查看？</summary>
+          <p>页面下方的“官方群组”“公告频道”按钮会在新标签页打开 Telegram，公告频道置顶消息会同步最新地址和安全提示；群组用于交流与反馈。若无法打开 Telegram，可使用网页版或在网络允许时再试，所有重大变更仍以本页与公告频道为准。</p>
         </details>
       </section>
     </main>
@@ -425,6 +451,22 @@
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，提升命中率，必要时可刷新重试。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "点击后出现随机子域是否安全？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "备用地址Ⅰ/Ⅱ 在点击时才会生成随机子域并自动跳转，所有子域均指向 besnow.me 或 besnow.us 主域下的官方节点，并保持 HTTPS 证书校验。请确认浏览器的锁标记正常，若提示证书异常请立即停止访问并回到本页或 Telegram 公告频道核对。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "官方公告和群组在哪里查看？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "页面下方的“官方群组”“公告频道”按钮会在新标签页打开 Telegram，公告频道置顶消息会同步最新地址和安全提示；群组用于交流与反馈。若无法打开 Telegram，可使用网页版或在网络允许时再试，所有重大变更仍以本页与公告频道为准。"
                 }
               }
             ]

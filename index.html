@@ -84,29 +84,32 @@
       max-width: 960px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      padding: 24px 20px;
+      border-radius: 14px;
+      padding: 26px 22px;
       text-align: left;
-      margin-top: 10px;
+      margin: 30px auto 10px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     }
-    .content-wrap p {
-      margin-bottom: 12px;
-      color: #f0f9f9;
-    }
-    .content-wrap strong {
-      color: #fff;
+    .content-wrap h2 {
+      text-align: center;
+      margin-bottom: 14px;
     }
     .faq details {
       margin-bottom: 10px;
       background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 8px;
-      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 14px 14px 12px;
+      backdrop-filter: blur(4px);
     }
     .faq summary {
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .faq p {
+      margin: 10px 0;
+      color: #f0f9f9;
     }
     .showcase-examples {
       margin-top: 20px;
@@ -223,11 +226,6 @@
         <img src="src/tx.png" alt="Besnow Cloud 贝雪云 Logo" id="mainimg" class="rotate">
       </div>
       <h1 class="page-title">Besnow Cloud 贝雪云｜官方地址发布页（备用网址与入口导航）</h1>
-      <div class="content-wrap">
-        <p><strong>为什么有这个页面：</strong>全球各地访问环境不同，主站偶尔会因网络封锁或劫持导致无法直达。此页集中发布官方可用入口，避免用户搜到钓鱼站点或过期链接，务必将本页加入书签（Ctrl+D / ⌘+D）以便随时获取最新地址。</p>
-        <p><strong>推荐访问顺序：</strong>优先使用主官网 <a href="https://besnow.org/" title="Besnow Cloud 官网 besnow.org" target="_blank" rel="noopener noreferrer">besnow.org</a>，若受限再尝试下方 <strong>备用网址Ⅰ（besnow.me）</strong>、<strong>备用网址Ⅱ（besnow.us）</strong>。所有入口均启用 HTTPS，加锁图标代表连接安全。</p>
-        <p><strong>安全验证提醒：</strong>官方通知仅以本页和 Telegram 公告频道为准；如遇陌生私信或仿冒链接，请核对域名、检查证书并对照公告置顶消息。建议定期回访本页确认最新入口，避免通过搜索引擎误点钓鱼站。</p>
-      </div>
       <div class="showcase-examples l-over l-center" aria-label="Besnow Cloud 官方访问入口">
         <a href="https://besnow.org/"
            title="Besnow Cloud 官网（besnow.org）"
@@ -259,14 +257,16 @@
 
 
       <section class="content-wrap faq" aria-labelledby="faq-title">
-        <h2 id="faq-title" style="text-align: center; margin-bottom: 12px;">常见问题 FAQ</h2>
+        <h2 id="faq-title">常见问题 FAQ</h2>
+        <details>
+          <summary>为什么有这个页面？</summary>
+          <p>全球各地访问环境不同，主站偶尔会因网络封锁或劫持导致无法直达。此页集中发布官方可用入口，避免用户搜到钓鱼站点或过期链接，务必将本页加入书签（Ctrl+D / ⌘+D）以便随时获取最新地址。</p>
+          <p>推荐访问顺序：优先使用主官网 <a href="https://besnow.org/" title="Besnow Cloud 官网 besnow.org" target="_blank" rel="noopener noreferrer">besnow.org</a>，若受限再尝试下方 备用网址Ⅰ（besnow.me）、备用网址Ⅱ（besnow.us）。所有入口均启用 HTTPS，加锁图标代表连接安全。</p>
+          <p>安全验证提醒：官方通知仅以本页和 Telegram 公告频道为准；如遇陌生私信或仿冒链接，请核对域名、检查证书并对照公告置顶消息。建议定期回访本页确认最新入口，避免通过搜索引擎误点钓鱼站。</p>
+        </details>
         <details>
           <summary>打不开官网怎么办？</summary>
           <p>请依次尝试备用网址Ⅰ（besnow.me）和备用网址Ⅱ（besnow.us），二者会在点击时自动分配可用子域入口；也可以切换网络或使用加速工具后重试。</p>
-        </details>
-        <details>
-          <summary>为什么需要地址发布页？</summary>
-          <p>部分地区可能暂时屏蔽主域名。地址发布页集中公布官方入口与最新公告，让用户在无法访问时仍可找到可信赖的备用通道，并降低搜到钓鱼站的风险。</p>
         </details>
         <details>
           <summary>如何验证这是官方页面？</summary>
@@ -376,51 +376,51 @@
           "name": "Besnow Cloud 地址发布页",
           "url": "https://address.besnow.xyz/"
         },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "打不开官网怎么办？",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "请依次尝试备用网址Ⅰ（besnow.me）和备用网址Ⅱ（besnow.us），二者会在点击时自动分配可用子域入口；也可以切换网络或使用加速工具后重试。"
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "为什么有这个页面？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "全球各地访问环境不同，主站偶尔会因网络封锁或劫持导致无法直达。此页集中发布官方可用入口，避免用户搜到钓鱼站点或过期链接，务必将本页加入书签（Ctrl+D / ⌘+D）以便随时获取最新地址。推荐访问顺序：优先使用主官网 besnow.org，若受限再尝试下方 备用网址Ⅰ（besnow.me）、备用网址Ⅱ（besnow.us）。所有入口均启用 HTTPS，加锁图标代表连接安全。安全验证提醒：官方通知仅以本页和 Telegram 公告频道为准；如遇陌生私信或仿冒链接，请核对域名、检查证书并对照公告置顶消息。建议定期回访本页确认最新入口，避免通过搜索引擎误点钓鱼站。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "打不开官网怎么办？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "请依次尝试备用网址Ⅰ（besnow.me）和备用网址Ⅱ（besnow.us），二者会在点击时自动分配可用子域入口；也可以切换网络或使用加速工具后重试。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "如何验证这是官方页面？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "请核对域名只包含 address.besnow.xyz（发布页）、besnow.org（官网）、besnow.me / besnow.us（备用网址），并确认浏览器出现 HTTPS 锁标志或证书有效提示。公告以 Telegram 频道置顶/最新消息为准，官方不会私信索取密码或验证码，遇到可疑链接请回到本页核验。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "如何收藏以防丢失？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "在电脑按 Ctrl+D（Mac 按 ⌘+D）即可收藏本页，移动端可使用浏览器的“添加到主屏幕/书签”功能，建议定期打开确认更新并同步保存 Telegram 公告频道。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "备用网址多久更新一次？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，提升命中率，必要时可刷新重试。"
+                }
               }
-            },
-            {
-              "@type": "Question",
-              "name": "为什么需要地址发布页？",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "部分地区可能暂时屏蔽主域名。地址发布页集中公布官方入口与最新公告，让用户在无法访问时仍可找到可信赖的备用通道，并降低搜到钓鱼站的风险。"
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "如何验证这是官方页面？",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "请核对域名只包含 address.besnow.xyz（发布页）、besnow.org（官网）、besnow.me / besnow.us（备用网址），并确认浏览器出现 HTTPS 锁标志或证书有效提示。公告以 Telegram 频道置顶/最新消息为准，官方不会私信索取密码或验证码，遇到可疑链接请回到本页核验。"
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "如何收藏以防丢失？",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "在电脑按 Ctrl+D（Mac 按 ⌘+D）即可收藏本页，移动端可使用浏览器的“添加到主屏幕/书签”功能，建议定期打开确认更新并同步保存 Telegram 公告频道。"
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "备用网址多久更新一次？",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，提升命中率，必要时可刷新重试。"
-              }
-            }
-          ]
-        }
+            ]
+          }
       ]
     }
   </script>

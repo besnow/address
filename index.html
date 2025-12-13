@@ -4,19 +4,26 @@
   <meta charset="UTF-8" />
   <!-- 视口适配移动端 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>最新地址发布</title>
-  <meta name="description" content="最新地址发布">
-  <meta name="keywords" content="最新地址发布">
+  <title>Besnow Cloud 贝雪云｜官方地址发布页（备用网址/入口导航）</title>
+  <meta name="description" content="Besnow Cloud 贝雪云官方地址发布页，汇总官网入口 besnow.org、备用网址 besnow.me / besnow.us，以及 Telegram 官方群组与公告频道，附防钓鱼验证方法并提示收藏 Ctrl+D。" />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <link rel="canonical" href="https://address.besnow.xyz/" />
+  <meta property="og:title" content="Besnow Cloud 贝雪云｜官方地址发布页（备用网址/入口导航）" />
+  <meta property="og:description" content="Besnow Cloud 贝雪云官方地址发布页，提供官网 besnow.org、备用网址与 Telegram 官方渠道，附防钓鱼验证指南与收藏提示。" />
+  <meta property="og:url" content="https://address.besnow.xyz/" />
+  <meta property="og:image" content="https://address.besnow.xyz/src/logo09.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#339999" />
   <link rel="shortcut icon" href="favicon.ico" />
 
   <!-- 外部样式表 -->
   <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/buttons.css">
   <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/showcase.css">
-  
+
   <!-- 可选：Google Fonts（国内环境可能需要替换） -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  
+
   <meta name="referrer" content="no-referrer" />
 
   <!-- 内联样式 -->
@@ -31,6 +38,7 @@
       height: 100%;
       font-family: 'Roboto', sans-serif;
       color: #fff;
+      line-height: 1.6;
     }
     /* 全局背景：使用纯色 #339999 */
     body#bg {
@@ -61,7 +69,62 @@
       height: auto;
       margin: 20px 0;
     }
-    /* 按钮样式 */
+    .page-title {
+      font-size: 1.7rem;
+      margin: 10px 0 18px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .content-wrap {
+      max-width: 960px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: left;
+      margin-top: 10px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+    .content-wrap p {
+      margin-bottom: 12px;
+      color: #f0f9f9;
+    }
+    .content-wrap strong {
+      color: #fff;
+    }
+    .sections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .section-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .section-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .section-card ul {
+      padding-left: 18px;
+      color: #e7f6f6;
+    }
+    .section-card li { margin-bottom: 8px; }
+    .faq details {
+      margin-bottom: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
     .showcase-examples {
       margin-top: 20px;
     }
@@ -78,7 +141,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      line-height: normal; 
+      line-height: normal;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -92,6 +155,7 @@
     #top_footer {
       text-align: center;
       margin-bottom: 20px;
+      padding: 0 20px;
     }
     hr.top_hr_style02 {
       width: 50%;
@@ -130,6 +194,15 @@
         width: 50%;
         margin: 30px 0;
       }
+      .page-title {
+        font-size: 1.4rem;
+      }
+      .content-wrap {
+        padding: 20px 16px;
+      }
+      .sections-grid {
+        grid-template-columns: 1fr;
+      }
       .showcase-examples {
         display: flex;
         flex-direction: column;
@@ -159,36 +232,81 @@
     <main id="top_main">
       <div id="top_logo">
         <!-- 主图标（旋转效果由 CSS 控制） -->
-        <img src="src/tx.png" alt="主图标" id="mainimg" class="rotate">
+        <img src="src/tx.png" alt="Besnow Cloud 贝雪云 Logo" id="mainimg" class="rotate">
       </div>
       <div id="top_title">
-        <img src="src/logo09.png" alt="网站标题" id="logoTitle">
+        <img src="src/logo09.png" alt="Besnow Cloud 官方地址发布页" id="logoTitle">
       </div>
-      <div class="showcase-examples l-over l-center">
-        <a href="https://www.besnow.org"
-           title="官方网站"
+      <h1 class="page-title">Besnow Cloud 贝雪云｜官方地址发布页（备用网址与入口导航）</h1>
+      <div class="content-wrap">
+        <p><strong>为什么有这个页面：</strong>全球各地访问环境不同，主站偶尔会因网络封锁或劫持导致无法直达。此页集中发布官方可用入口，避免用户搜到钓鱼站点或过期链接，务必将本页加入书签（Ctrl+D / ⌘+D）以便随时获取最新地址。</p>
+        <p><strong>推荐访问顺序：</strong>优先使用主官网 <a href="https://besnow.org/" title="Besnow Cloud 官网 besnow.org" target="_blank" rel="noopener noreferrer">besnow.org</a>，若受限再尝试下方 <strong>备用网址Ⅰ（besnow.me）</strong>、<strong>备用网址Ⅱ（besnow.us）</strong>。所有入口均启用 HTTPS，加锁图标代表连接安全。</p>
+        <p><strong>安全验证提醒：</strong>官方通知仅以本页和 Telegram 公告频道为准；如遇陌生私信或仿冒链接，请核对域名、检查证书并对照公告置顶消息。建议定期回访本页确认最新入口，避免通过搜索引擎误点钓鱼站。</p>
+      </div>
+      <div class="showcase-examples l-over l-center" aria-label="Besnow Cloud 官方访问入口">
+        <a href="https://besnow.org/"
+           title="Besnow Cloud 官网（besnow.org）"
            class="button button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">官方网站</a>
+           target="_blank" rel="noopener noreferrer">Besnow Cloud 官网（besnow.org）</a>
 
-        <a href="https://besnow.me"
-           title="国内入口1"
+        <a href="https://besnow.me/"
+           title="Besnow Cloud 备用网址Ⅰ（besnow.me，点击后自动分配可用入口）"
            class="button random-domain button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">国内入口Ⅰ</a>
+           data-base="besnow.me"
+           target="_blank" rel="noopener noreferrer">备用网址Ⅰ（besnow.me）</a>
 
-        <a href="https://besnow.us"
-           title="国内入口2"
+        <a href="https://besnow.us/"
+           title="Besnow Cloud 备用网址Ⅱ（besnow.us，点击后自动分配可用入口）"
            class="button random-domain button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">国内入口Ⅱ</a>
+           data-base="besnow.us"
+           target="_blank" rel="noopener noreferrer">备用网址Ⅱ（besnow.us）</a>
 
         <a href="https://t.me/Besnow_L"
-           title="官方群组"
+           title="Besnow Cloud 官方群组（Telegram）"
            class="button button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">官方群组</a>
+           target="_blank" rel="noopener noreferrer">Telegram 官方群组</a>
 
         <a href="https://t.me/Besnow_Cloud"
-           title="公告频道"
+           title="Besnow Cloud 公告频道（Telegram）"
            class="button button-rounded button-plain button-small-caps button-border"
-           target="_blank" rel="noopener noreferrer">公告频道</a>
+           target="_blank" rel="noopener noreferrer">Telegram 公告频道</a>
+      </div>
+
+      <div class="sections-grid">
+        <section class="section-card" aria-labelledby="verify-title">
+          <h2 id="verify-title">如何验证这是官方页面</h2>
+          <ul>
+            <li>核对域名：仅信任 <strong>address.besnow.xyz</strong> 发布入口，官网域为 <strong>besnow.org</strong>，备用网址为 <strong>besnow.me / besnow.us</strong>。</li>
+            <li>确认 HTTPS：浏览器地址栏需出现锁标志或证书有效提示，拒绝访问不安全连接。</li>
+            <li>对照公告：以 Telegram 公告频道置顶或最新消息为准，避免点击来路不明的短链。</li>
+            <li>警惕私信：官方不会索取密码或验证码，若收到可疑链接请回到本页核验。</li>
+            <li>收藏本页：Ctrl+D / ⌘+D 收藏，遇到打不开可刷新或切换网络后重试。</li>
+          </ul>
+        </section>
+
+        <section class="section-card faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">常见问题 FAQ</h2>
+          <details>
+            <summary>打不开官网怎么办？</summary>
+            <p>请依次尝试备用网址Ⅰ（besnow.me）和备用网址Ⅱ（besnow.us），二者会在点击时自动分配可用子域入口；也可以切换网络或使用加速工具后重试。</p>
+          </details>
+          <details>
+            <summary>为什么需要地址发布页？</summary>
+            <p>部分地区可能暂时屏蔽主域名。地址发布页集中公布官方入口与最新公告，让用户在无法访问时仍可找到可信赖的备用通道。</p>
+          </details>
+          <details>
+            <summary>如何收藏以防丢失？</summary>
+            <p>在电脑按 Ctrl+D（Mac 按 ⌘+D）即可收藏本页，移动端可使用浏览器的“添加到主屏幕/书签”功能，建议定期打开确认更新。</p>
+          </details>
+          <details>
+            <summary>备用网址多久更新一次？</summary>
+            <p>当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，确保有更高命中率。</p>
+          </details>
+          <details>
+            <summary>怎样确认不是钓鱼站？</summary>
+            <p>务必核对域名是否包含 besnow.org、besnow.me、besnow.us，并查看 HTTPS 证书是否有效，再对照 Telegram 公告频道的置顶信息确认。</p>
+          </details>
+        </section>
       </div>
     </main>
   </div>
@@ -196,7 +314,7 @@
   <footer id="top_footer">
     <hr class="top_hr_style02">
     <span>
-      <a href="#">&nbsp;为避免主站被封锁导致无法访问，请 Ctrl+D 收藏本地址发布页</a>
+      <a href="#">为避免主站被封锁导致无法访问，请使用 Ctrl+D 收藏本地址发布页并定期回访以获取最新入口。</a>
     </span>
   </footer>
 
@@ -213,55 +331,125 @@
     });
   </script>
 
-  <!-- 随机域名脚本 -->
+  <!-- 备用网址点击时随机子域跳转（初始链接保持稳定） -->
   <script>
     (function() {
-      const domains = ['besnow.me', 'besnow.us'];
-      function shuffle(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [array[i], array[j]] = [array[j], array[i]];
+      const randomLinks = document.querySelectorAll('a.random-domain');
+      const words = [
+        'fast','safe','cloud','light','nova','sky','aqua','secure','swift','fresh','leaf','stone','wave','breeze','glow','pulse','zen','mint','echo','spark',
+        'cabbage','spinach','cauliflower','carrot','tomato','cucumber','pumpkin','pepper','mushroom','onion','lime','grape','kiwi','melon','pearl','maple','cedar','willow','ash','elm'
+      ];
+
+      function generateRandomSubdomain() {
+        const pieceCount = Math.floor(Math.random() * 2) + 1;
+        const selected = [];
+        for (let i = 0; i < pieceCount; i++) {
+          selected.push(words[Math.floor(Math.random() * words.length)]);
         }
-        return array;
+        if (Math.random() < 0.4) {
+          selected.push(Math.floor(Math.random() * 100));
+        }
+        return selected.join('');
       }
-      function randomDomain() {
-        const subdomains = [
-          'fast', 'slow', 'happy', 'sad', 'angry', 'calm', 'bright', 'dark', 'big', 'small',
-          'cabbage', 'spinach', 'cauliflower', 'carrot', 'eggplant', 'garlic', 'celery', 'radish',
-          'broccoli', 'onion', 'leek', 'pepper', 'mushroom', 'pumpkin', 'bean', 'tomato',
-          'cucumber', 'potato', 'lettuce', 'pea', 'corn', 'squash', 'zucchini', 'asparagus',
-          'beet', 'turnip', 'parsnip', 'artichoke', 'avocado', 'mango', 'banana', 'orange',
-          'lemon', 'lime', 'grapefruit', 'strawberry', 'blueberry', 'raspberry', 'blackberry',
-          'cherry', 'peach', 'plum', 'apricot', 'grape', 'kiwi', 'pineapple', 'pear', 'melon',
-          'watermelon', 'cantaloupe', 'honeydew', 'apple', 'dragonfruit', 'passionfruit',
-          'pomegranate', 'lychee', 'papaya', 'guava', 'fig', 'date', 'coconut', 'almond', 'walnut',
-          'peanut', 'cashew', 'pistachio', 'hazelnut', 'macadamia', 'pecan', 'brazilnut',
-          'pine', 'oak', 'maple', 'birch', 'spruce', 'cedar', 'willow', 'ash', 'beech', 'elm'
-        ];
-        const numSubdomains = Math.floor(Math.random() * 3) + 1;
-        let selectedSubdomains = [];
-        for (let i = 0; i < numSubdomains; i++) {
-          const randomIndex = Math.floor(Math.random() * subdomains.length);
-          selectedSubdomains.push(subdomains[randomIndex]);
+
+      function updateLinkHref(link) {
+        const base = link.dataset.base;
+        if (!base) return;
+        const subdomain = generateRandomSubdomain();
+        const newHref = `https://${subdomain}.${base}/`;
+        link.href = newHref;
+        if (link.textContent.includes('备用网址Ⅰ')) {
+          link.textContent = `备用网址Ⅰ（${subdomain}.${base}）`;
+        } else if (link.textContent.includes('备用网址Ⅱ')) {
+          link.textContent = `备用网址Ⅱ（${subdomain}.${base}）`;
         }
-        // 30% 概率添加随机数字
-        if (Math.random() < 0.3) {
-          selectedSubdomains.push(Math.floor(Math.random() * 100));
-        }
-        shuffle(selectedSubdomains);
-        const subdomain = selectedSubdomains.join('');
-        return `${subdomain}.${domains[Math.floor(Math.random() * domains.length)]}`;
       }
-      const links = document.querySelectorAll('a.random-domain');
-      links.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href.includes('besnow.me') || href.includes('besnow.us')) {
-          const newDomain = randomDomain();
-          const newHref = href.replace(/(besnow\.me|besnow\.us)/, newDomain);
-          link.setAttribute('href', newHref);
+
+      function handleActivation(event) {
+        const isKeyboard = event.type === 'keydown';
+        if (isKeyboard && event.key !== 'Enter' && event.key !== ' ') {
+          return;
         }
+        if (isKeyboard && event.key === ' ') {
+          event.preventDefault();
+        }
+        updateLinkHref(event.currentTarget);
+      }
+
+      randomLinks.forEach(link => {
+        link.addEventListener('pointerdown', handleActivation);
+        link.addEventListener('keydown', handleActivation);
       });
     })();
+  </script>
+
+  <!-- 结构化数据 JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Besnow Cloud 贝雪云",
+          "url": "https://besnow.org/",
+          "logo": "https://address.besnow.xyz/src/logo09.png",
+          "sameAs": [
+            "https://t.me/Besnow_L",
+            "https://t.me/Besnow_Cloud"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "name": "Besnow Cloud 地址发布页",
+          "url": "https://address.besnow.xyz/"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "打不开官网怎么办？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "请依次尝试备用网址Ⅰ（besnow.me）和备用网址Ⅱ（besnow.us），二者会在点击时自动分配可用子域入口；也可以切换网络或使用加速工具后重试。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "为什么需要地址发布页？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "部分地区可能暂时屏蔽主域名。地址发布页集中公布官方入口与最新公告，让用户在无法访问时仍可找到可信赖的备用通道。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "如何收藏以防丢失？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "在电脑按 Ctrl+D（Mac 按 ⌘+D）即可收藏本页，移动端可使用浏览器的“添加到主屏幕/书签”功能，建议定期打开确认更新。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "备用网址多久更新一次？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，确保有更高命中率。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "怎样确认不是钓鱼站？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "务必核对域名是否包含 besnow.org、besnow.me、besnow.us，并查看 HTTPS 证书是否有效，再对照 Telegram 公告频道的置顶信息确认。"
+              }
+            }
+          ]
+        }
+      ]
+    }
   </script>
 </body>
 </html>

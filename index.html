@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8" />
   <!-- 视口适配移动端 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Besnow Cloud 贝雪云｜官方地址发布页（备用网址/入口导航）</title>
-  <meta name="description" content="Besnow Cloud 贝雪云官方地址发布页，汇总官网入口 besnow.org、备用网址 besnow.me / besnow.us，以及 Telegram 官方群组与公告频道，附防钓鱼验证方法并提示收藏 Ctrl+D。" />
+  <title>Besnow Cloud 貝雪雲｜官方入口導航與公告</title>
+  <meta name="description" content="Besnow Cloud 貝雪雲官方入口導航，提供 besnow.org 官方網址、備用地址、Telegram 官方群組與公告頻道，附安全核驗指引並提醒加入書籤收藏。" />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <link rel="canonical" href="https://address.besnow.xyz/" />
-  <meta property="og:title" content="Besnow Cloud 贝雪云｜官方地址发布页（备用网址/入口导航）" />
-  <meta property="og:description" content="Besnow Cloud 贝雪云官方地址发布页，提供官网 besnow.org、备用网址与 Telegram 官方渠道，附防钓鱼验证指南与收藏提示。" />
+  <link rel="alternate" hreflang="zh-HK" href="https://address.besnow.xyz/" />
+  <meta property="og:title" content="Besnow Cloud 貝雪雲｜官方入口導航與公告" />
+  <meta property="og:description" content="Besnow Cloud 貝雪雲官方入口導航，集中公布官方網址、備用地址與公告頻道，附安全核驗指引，請加入書籤收藏本頁並以公告頻道置頂訊息為準。" />
   <meta property="og:url" content="https://address.besnow.xyz/" />
   <meta property="og:image" content="https://address.besnow.xyz/src/logo09.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Besnow Cloud 貝雪雲" />
+  <meta property="og:locale" content="zh_HK" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Besnow Cloud 貝雪雲｜官方入口導航與公告" />
+  <meta name="twitter:description" content="Besnow Cloud 貝雪雲官方入口導航，集中公布官方網址、備用地址與公告頻道，附安全核驗指引，請加入書籤收藏本頁並以公告頻道置頂訊息為準。" />
+  <meta name="twitter:image" content="https://address.besnow.xyz/src/logo09.png" />
   <meta name="theme-color" content="#339999" />
   <link rel="shortcut icon" href="favicon.ico" />
 
-  <!-- 外部样式表 -->
-  <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/buttons.css">
-  <link rel="stylesheet" type="text/css" href="https://www.bootcss.com/p/buttons/css/showcase.css">
-
-  <!-- 可选：Google Fonts（国内环境可能需要替换） -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- 本地样式表 -->
+  <link rel="stylesheet" type="text/css" href="src/buttons.css">
 
   <meta name="referrer" content="no-referrer" />
 
@@ -30,6 +32,11 @@
   <style>
     :root {
       --content-width: min(980px, calc(100% - 40px));
+      --font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans HK", "PingFang HK", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif;
+      --text-primary: #ffffff;
+      --text-muted: #f0f7f7;
+      --card-border: rgba(255, 255, 255, 0.22);
+      --card-bg: rgba(255, 255, 255, 0.08);
     }
 
     /* 全局基础样式 */
@@ -40,8 +47,8 @@
     }
     html, body {
       height: 100%;
-      font-family: 'Roboto', sans-serif;
-      color: #fff;
+      font-family: var(--font-family);
+      color: var(--text-primary);
       line-height: 1.6;
     }
     /* 全局背景：使用纯色 #339999 */
@@ -89,6 +96,7 @@
       font-size: 2rem;
       font-weight: 800;
       letter-spacing: 0.6px;
+      font-family: var(--font-family);
     }
     .silver-text {
       background: linear-gradient(to bottom, #C0C0C0 0%, #E0E0E0 50%, #A9A9A9 100%);
@@ -99,17 +107,19 @@
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
     .page-title h2 {
-      font-size: 1.2rem;
-      font-weight: 500;
-      opacity: 0.95;
+      font-size: 1.15rem;
+      font-weight: 600;
+      opacity: 0.98;
       letter-spacing: 0.2px;
+      text-align: center;
+      font-family: var(--font-family);
     }
     .content-wrap {
       width: var(--content-width);
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
       border-radius: 14px;
-      padding: 26px 22px;
+      padding: 26px 22px 22px;
       text-align: left;
       margin: 30px auto 10px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
@@ -117,11 +127,13 @@
     .content-wrap h2 {
       text-align: center;
       margin-bottom: 14px;
+      font-size: 1.2rem;
+      letter-spacing: 0.2px;
     }
     .faq details {
       margin-bottom: 10px;
       background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid var(--card-border);
       border-radius: 12px;
       padding: 14px 14px 12px;
       backdrop-filter: blur(4px);
@@ -130,10 +142,13 @@
       cursor: pointer;
       font-weight: 700;
       line-height: 1.5;
+      font-family: var(--font-family);
+      font-size: 1rem;
     }
     .faq p {
       margin: 10px 0;
-      color: #f0f9f9;
+      color: var(--text-muted);
+      font-size: 0.98rem;
     }
     .showcase-examples {
       margin: 20px auto 0;
@@ -148,26 +163,12 @@
       margin: 0;
       flex: 1 1 0;
       min-width: 0;
-      /* 添加边框 */
-      border: 2px solid #fff;
-      color: #fff !important;
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-      font-size: 0.95rem;
+      font-size: 1rem;
       padding: 12px 16px;
-      border-radius: 6px;
-      /* 关键：使用 inline-flex 并居中对齐 */
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      line-height: normal;
+      border-radius: 8px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-    .showcase-examples a.button:hover {
-      background-color: #fff !important;
-      color: #000 !important;
-      border-color: #000 !important;
     }
     /* 底部样式 */
     #top_footer {
@@ -181,14 +182,14 @@
       border: none;
       border-top: 2px solid #ffffff33;
     }
-    #top_footer span a {
-      color: #fff;
-      text-decoration: none;
-      border-bottom: 1px dashed transparent;
-      transition: border-color 0.3s;
+    #top_footer p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
-    #top_footer span a:hover {
-      border-color: #fff;
+    #top_footer a {
+      color: #fff;
+      text-decoration: underline;
     }
     /* 主图标旋转动画 */
     @keyframes rotateAnimation {
@@ -200,6 +201,16 @@
     }
     #mainimg:hover {
       animation-play-state: paused;
+    }
+
+    .safety-list {
+      margin: 8px 0 0 18px;
+      padding-left: 0;
+    }
+    .safety-list li {
+      margin-bottom: 8px;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
     /* 移动端样式（保留原先的按钮、图标放大等） */
@@ -250,82 +261,87 @@
   </style>
 </head>
 <body id="bg">
-  <header class="top-bar" aria-label="Besnow Cloud 品牌标识">
-    <a class="brand-mark" href="https://address.besnow.xyz/" title="返回 Besnow Cloud 地址发布页">
-      <img src="src/logo09.png" alt="Besnow Cloud 官方地址发布页标识" id="logoTitle">
+  <header class="top-bar" aria-label="Besnow Cloud 品牌標識">
+    <a class="brand-mark" href="https://address.besnow.xyz/" title="返回 Besnow Cloud 官方入口導航">
+      <img src="src/logo09.png" alt="Besnow Cloud 貝雪雲官方入口導航標識" id="logoTitle">
     </a>
   </header>
   <div id="top">
     <main id="top_main">
       <div id="top_logo">
         <!-- 主图标（旋转效果由 CSS 控制） -->
-        <img src="src/tx.png" alt="Besnow Cloud 贝雪云 Logo" id="mainimg" class="rotate">
+        <img src="src/tx.png" alt="Besnow Cloud 貝雪雲 Logo" id="mainimg" class="rotate">
       </div>
       <div class="page-title">
-        <h1 class="silver-text">讓你的網路無界限</h1>
-        <h2>官方地址发布页（备用网址与入口导航）</h2>
+        <h1 class="silver-text">官方入口導航</h1>
+        <h2>請加入書籤收藏本頁；入口更新以公告頻道置頂訊息為準</h2>
       </div>
-      <div class="showcase-examples l-over l-center" aria-label="Besnow Cloud 官方访问入口">
+      <div class="showcase-examples l-over l-center" aria-label="Besnow Cloud 官方訪問入口">
         <a href="https://besnow.org/"
-           title="Besnow Cloud 官网（besnow.org）官方网址"
+           title="Besnow Cloud 貝雪雲官方網址（besnow.org）"
            class="button button-rounded button-plain button-small-caps button-border"
            target="_blank" rel="noopener noreferrer">官方網址</a>
 
         <a href="https://besnow.me/"
-           title="Besnow Cloud 备用网址Ⅰ（besnow.me，点击后自动分配可用入口）"
+           title="Besnow Cloud 備用地址 I（besnow.me，點擊後自動分配可用入口）"
            class="button random-domain button-rounded button-plain button-small-caps button-border"
            data-base="besnow.me"
-           target="_blank" rel="noopener noreferrer">備用地址Ⅰ</a>
+           target="_blank" rel="noopener noreferrer">備用地址 I</a>
 
         <a href="https://besnow.us/"
-           title="Besnow Cloud 备用网址Ⅱ（besnow.us，点击后自动分配可用入口）"
+           title="Besnow Cloud 備用地址 II（besnow.us，點擊後自動分配可用入口）"
            class="button random-domain button-rounded button-plain button-small-caps button-border"
            data-base="besnow.us"
-           target="_blank" rel="noopener noreferrer">備用地址Ⅱ</a>
+           target="_blank" rel="noopener noreferrer">備用地址 II</a>
 
         <a href="https://t.me/Besnow_L"
-           title="Besnow Cloud 官方群组（Telegram）"
+           title="Besnow Cloud 官方群組（Telegram）"
            class="button button-rounded button-plain button-small-caps button-border"
            target="_blank" rel="noopener noreferrer">官方群組</a>
 
         <a href="https://t.me/Besnow_Cloud"
-           title="Besnow Cloud 公告频道（Telegram）"
+           title="Besnow Cloud 公告頻道（Telegram）"
            class="button button-rounded button-plain button-small-caps button-border"
            target="_blank" rel="noopener noreferrer">公告頻道</a>
       </div>
 
 
       <section class="content-wrap faq" aria-labelledby="faq-title">
-        <h2 id="faq-title">常见问题 FAQ</h2>
+        <h2 id="faq-title">常見問題 FAQ</h2>
         <details>
-          <summary>为什么有这个页面？</summary>
-          <p>全球各地访问环境不同，主站偶尔会因网络封锁或劫持导致无法直达。此页集中发布官方可用入口，避免用户搜到钓鱼站点或过期链接，务必将本页加入书签（Ctrl+D / ⌘+D）以便随时获取最新地址。</p>
-          <p>推荐访问顺序：优先使用主官网 <a href="https://besnow.org/" title="Besnow Cloud 官网 besnow.org" target="_blank" rel="noopener noreferrer">besnow.org</a>，若受限再尝试下方 备用网址Ⅰ（besnow.me）、备用网址Ⅱ（besnow.us）。所有入口均启用 HTTPS，加锁图标代表连接安全。</p>
-          <p>安全验证提醒：官方通知仅以本页和 Telegram 公告频道为准；如遇陌生私信或仿冒链接，请核对域名、检查证书并对照公告置顶消息。建议定期回访本页确认最新入口，避免通过搜索引擎误点钓鱼站。</p>
+          <summary>為何需要這個官方入口導航？</summary>
+          <p>這是 Besnow Cloud 貝雪雲唯一的官方入口發布頁，用於同步主站與備用地址，避免搜尋結果混入釣魚站。請先將本頁加入書籤（Ctrl+D / ⌘+D），並以公告頻道置頂訊息為準。</p>
+          <p>操作建議：先開啟主官網 <a href="https://besnow.org/" title="Besnow Cloud 官方網址 besnow.org" target="_blank" rel="noopener noreferrer">besnow.org</a>，若遇網絡封鎖再點擊下方備用地址 I / II，並定期回到書籤中的本頁確認公告頻道的最新置頂。</p>
         </details>
         <details>
-          <summary>打不开官网怎么办？</summary>
-          <p>请依次尝试备用网址Ⅰ（besnow.me）和备用网址Ⅱ（besnow.us），二者会在点击时自动分配可用子域入口；也可以切换网络或使用加速工具后重试。</p>
+          <summary>如何做安全核驗防釣魚？</summary>
+          <p>請按以下核驗流程，並以書籤返回本頁與公告頻道置頂訊息交叉檢查：</p>
+          <ul class="safety-list">
+            <li>只認準白名單：address.besnow.xyz、besnow.org、besnow.me、besnow.us、t.me/Besnow_Cloud、t.me/Besnow_L。</li>
+            <li>確認瀏覽器 HTTPS 鎖頭與憑證有效，若憑證異常請立即停止並回到書籤中的本頁。</li>
+            <li>官方不會私訊（PM）索取密碼／驗證碼或要求遙距控制；如有可疑私訊一律視為詐騙。</li>
+            <li>遇到仿冒或不確定情況，先從書籤打開本頁，再到公告頻道查看置頂公告。</li>
+          </ul>
         </details>
         <details>
-          <summary>如何验证这是官方页面？</summary>
-          <p>请核对域名只包含 address.besnow.xyz（发布页）、besnow.org（官网）、besnow.me / besnow.us（备用网址），并确认浏览器出现 HTTPS 锁标志或证书有效提示。公告以 Telegram 频道置顶/最新消息为准，官方不会私信索取密码或验证码，遇到可疑链接请回到本页核验。</p>
+          <summary>主站打不開時怎麼處理？</summary>
+          <p>結論：直接使用備用地址 I / II，它會在點擊時隨機分配可用子域提升命中率。操作：點擊按鈕→待跳轉→若仍受阻，切換網絡或稍後重試，並留意公告頻道置頂訊息。請把本頁加到書籤以便回來重試。</p>
         </details>
         <details>
-          <summary>如何收藏以防丢失？</summary>
-          <p>在电脑按 Ctrl+D（Mac 按 ⌘+D）即可收藏本页，移动端可使用浏览器的“添加到主屏幕/书签”功能，建议定期打开确认更新并同步保存 Telegram 公告频道。</p>
+          <summary>如何收藏避免遺失？</summary>
+          <p>請立即按 Ctrl+D（Mac 按 ⌘+D）或使用手機瀏覽器的「加入書籤／添加到主畫面」功能收藏本頁，並在公告頻道開啟置頂訊息通知，之後只需從書籤打開即可隨時核對最新入口。</p>
         </details>
         <details>
-          <summary>备用网址多久更新一次？</summary>
-          <p>当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，提升命中率，必要时可刷新重试。</p>
+          <summary>入口多久會更新？</summary>
+          <p>只要偵測到網絡環境變化或節點受阻，備用地址的隨機子域池會即時調整並在公告頻道置頂同步。本頁內容也會更新，請以書籤回訪並查看公告置頂訊息。</p>
         </details>
         <details>
-          <summary>点击后出现随机子域是否安全？</summary>
-          <p>备用地址Ⅰ/Ⅱ 在点击时才会生成随机子域并自动跳转，所有子域均指向 besnow.me 或 besnow.us 主域下的官方节点，并保持 HTTPS 证书校验。请确认浏览器的锁标记正常，若提示证书异常请立即停止访问并回到本页或 Telegram 公告频道核对。</p>
+          <summary>隨機子域跳轉是否安全？</summary>
+          <p>備用地址 I / II 會在點擊時才生成隨機子域，全部都在 besnow.me / besnow.us 主域下並使用有效 HTTPS 憑證。若瀏覽器提示憑證異常請立即停止，透過書籤回到本頁並核對公告頻道置頂訊息。</p>
         </details>
         <details>
-          <summary>官方公告和群组在哪里查看？</summary>
-          <p>页面下方的“官方群组”“公告频道”按钮会在新标签页打开 Telegram，公告频道置顶消息会同步最新地址和安全提示；群组用于交流与反馈。若无法打开 Telegram，可使用网页版或在网络允许时再试，所有重大变更仍以本页与公告频道为准。</p>
+          <summary>如何查看官方公告與加入群組？</summary>
+          <p>點擊「官方群組」「公告頻道」按鈕會在新分頁開啟 Telegram；公告頻道置頂訊息會同步最新地址與安全提示，群組供交流回饋。請將本頁加入書籤並定期按公告置頂訊息操作。</p>
         </details>
       </section>
     </main>
@@ -333,12 +349,10 @@
 
   <footer id="top_footer">
     <hr class="top_hr_style02">
-    <span>
-      <a href="#">为避免主站被封锁导致无法访问，请使用 Ctrl+D 收藏本地址发布页并定期回访以获取最新入口。</a>
-    </span>
+    <p>請將 <a href="https://address.besnow.xyz/" rel="noopener noreferrer">address.besnow.xyz</a> 加入書籤並定期回訪；如有任何私訊（PM）索取敏感資料，一律視為詐騙。</p>
   </footer>
 
-  <!-- 主图标悬停时切换图片（旋转效果由 CSS 控制） -->
+  <!-- 主圖標懸停時切換圖片（旋轉效果由 CSS 控制） -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const mainImg = document.getElementById('mainimg');
@@ -351,7 +365,7 @@
     });
   </script>
 
-  <!-- 备用网址点击时随机子域跳转（初始链接保持稳定） -->
+  <!-- 備用地址點擊時隨機子域跳轉（初始連結保持穩定） -->
   <script>
     (function() {
       const randomLinks = document.querySelectorAll('a.random-domain');
@@ -405,8 +419,9 @@
       "@graph": [
         {
           "@type": "Organization",
-          "name": "Besnow Cloud 贝雪云",
-          "url": "https://besnow.org/",
+          "@id": "https://address.besnow.xyz/#organization",
+          "name": "Besnow Cloud 貝雪雲",
+          "url": "https://address.besnow.xyz/",
           "logo": "https://address.besnow.xyz/src/logo09.png",
           "sameAs": [
             "https://t.me/Besnow_L",
@@ -415,70 +430,95 @@
         },
         {
           "@type": "WebSite",
-          "name": "Besnow Cloud 地址发布页",
-          "url": "https://address.besnow.xyz/"
-        },
-          {
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "为什么有这个页面？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "全球各地访问环境不同，主站偶尔会因网络封锁或劫持导致无法直达。此页集中发布官方可用入口，避免用户搜到钓鱼站点或过期链接，务必将本页加入书签（Ctrl+D / ⌘+D）以便随时获取最新地址。推荐访问顺序：优先使用主官网 besnow.org，若受限再尝试下方 备用网址Ⅰ（besnow.me）、备用网址Ⅱ（besnow.us）。所有入口均启用 HTTPS，加锁图标代表连接安全。安全验证提醒：官方通知仅以本页和 Telegram 公告频道为准；如遇陌生私信或仿冒链接，请核对域名、检查证书并对照公告置顶消息。建议定期回访本页确认最新入口，避免通过搜索引擎误点钓鱼站。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "打不开官网怎么办？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "请依次尝试备用网址Ⅰ（besnow.me）和备用网址Ⅱ（besnow.us），二者会在点击时自动分配可用子域入口；也可以切换网络或使用加速工具后重试。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "如何验证这是官方页面？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "请核对域名只包含 address.besnow.xyz（发布页）、besnow.org（官网）、besnow.me / besnow.us（备用网址），并确认浏览器出现 HTTPS 锁标志或证书有效提示。公告以 Telegram 频道置顶/最新消息为准，官方不会私信索取密码或验证码，遇到可疑链接请回到本页核验。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "如何收藏以防丢失？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "在电脑按 Ctrl+D（Mac 按 ⌘+D）即可收藏本页，移动端可使用浏览器的“添加到主屏幕/书签”功能，建议定期打开确认更新并同步保存 Telegram 公告频道。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "备用网址多久更新一次？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "当检测到部分入口不可用时会即时更新随机子域池并在 Telegram 公告频道同步；每次点击都会生成新的随机子域，提升命中率，必要时可刷新重试。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "点击后出现随机子域是否安全？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "备用地址Ⅰ/Ⅱ 在点击时才会生成随机子域并自动跳转，所有子域均指向 besnow.me 或 besnow.us 主域下的官方节点，并保持 HTTPS 证书校验。请确认浏览器的锁标记正常，若提示证书异常请立即停止访问并回到本页或 Telegram 公告频道核对。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "官方公告和群组在哪里查看？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "页面下方的“官方群组”“公告频道”按钮会在新标签页打开 Telegram，公告频道置顶消息会同步最新地址和安全提示；群组用于交流与反馈。若无法打开 Telegram，可使用网页版或在网络允许时再试，所有重大变更仍以本页与公告频道为准。"
-                }
-              }
-            ]
+          "@id": "https://address.besnow.xyz/#website",
+          "name": "Besnow Cloud 貝雪雲官方入口導航",
+          "url": "https://address.besnow.xyz/",
+          "inLanguage": "zh-HK",
+          "publisher": {
+            "@id": "https://address.besnow.xyz/#organization"
           }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://address.besnow.xyz/#webpage",
+          "url": "https://address.besnow.xyz/",
+          "name": "Besnow Cloud 貝雪雲｜官方入口導航與公告",
+          "description": "Besnow Cloud 貝雪雲官方入口導航，提供 besnow.org 官方網址、備用地址、Telegram 官方群組與公告頻道，附安全核驗指引並提醒加入書籤收藏。",
+          "inLanguage": "zh-HK",
+          "isPartOf": {
+            "@id": "https://address.besnow.xyz/#website"
+          },
+          "about": {
+            "@id": "https://address.besnow.xyz/#organization"
+          },
+          "dateModified": "2025-12-31"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://address.besnow.xyz/#faq",
+          "inLanguage": "zh-HK",
+          "isPartOf": {
+            "@id": "https://address.besnow.xyz/#webpage"
+          },
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "為何需要這個官方入口導航？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "這是 Besnow Cloud 貝雪雲唯一的官方入口發布頁，用於同步主站與備用地址，避免搜尋結果混入釣魚站。請先將本頁加入書籤並以公告頻道置頂訊息為準：先開啟 besnow.org，若遇網絡阻斷再使用備用地址 I / II，並定期從書籤回到本頁核對置頂。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "如何做安全核驗防釣魚？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "請按以下核驗流程並以公告頻道置頂訊息交叉檢查：只認準 address.besnow.xyz、besnow.org、besnow.me、besnow.us、t.me/Besnow_Cloud、t.me/Besnow_L；確認瀏覽器 HTTPS 鎖頭與憑證有效，如憑證異常請立即停止並從書籤回到本頁；官方不會私訊（PM）索取密碼、驗證碼或要求遙距控制，如有可疑私訊一律視為詐騙；遇到仿冒先從書籤打開本頁，再到公告頻道查看置頂公告。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "主站打不開時怎麼處理？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "結論：直接使用備用地址 I / II，點擊後會隨機分配可用子域提升連線成功率；若仍受阻，可切換網絡或稍後重試。請務必把本頁加入書籤並依公告頻道置頂訊息確認最新入口。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "如何收藏避免遺失？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "立即按 Ctrl+D（Mac 按 ⌘+D）或在手機瀏覽器選擇「加入書籤／添加到主畫面」，把本頁保存；同時將公告頻道訊息置頂，之後從書籤回來即可隨時核對最新指引。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "入口多久會更新？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "只要偵測到網絡環境變化或節點受阻，備用地址的隨機子域池會即時更新並在公告頻道置頂同步。請以書籤回訪本頁並依公告置頂訊息為準。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "隨機子域跳轉是否安全？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "備用地址 I / II 在點擊時才會生成隨機子域並自動跳轉，全部位於 besnow.me / besnow.us 主域下並使用有效 HTTPS 憑證。若瀏覽器提示憑證異常或域名不在白名單，請立即停止並從書籤回到本頁核對公告頻道置頂。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "如何查看官方公告與加入群組？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "點擊「官方群組」「公告頻道」按鈕會在新分頁開啟 Telegram；公告頻道置頂會提供最新地址與安全提醒，群組供交流與回饋。請收藏本頁並以公告置頂訊息為準。"
+              }
+            }
+          ]
+        }
       ]
     }
   </script>

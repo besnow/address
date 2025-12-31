@@ -1,0 +1,55 @@
+:root {
+  --button-transition: 0.25s ease;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  font-weight: 700;
+  font-size: 0.97rem;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid #ffffff;
+  transition: color var(--button-transition), background-color var(--button-transition), border-color var(--button-transition), box-shadow var(--button-transition);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+.button:hover,
+.button:active {
+  background: #ffffff;
+  color: #0b4f4f;
+  border-color: #0b4f4f;
+}
+
+.button-rounded {
+  border-radius: 8px;
+}
+
+.button-plain {
+  background: transparent;
+}
+
+.button-small-caps {
+  font-variant-caps: all-small-caps;
+}
+
+.button-border {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.l-over,
+.l-center {
+  width: 100%;
+}

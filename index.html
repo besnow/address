@@ -55,7 +55,7 @@
     body#bg {
       background-color: #339999;
       transition: opacity 0.5s ease-in-out;
-      padding-bottom: 112px;
+      padding-bottom: 88px;
     }
 
     /* 顶部角落品牌标识 */
@@ -221,7 +221,7 @@
       bottom: 0;
       z-index: 18;
       width: 100%;
-      padding: 10px 20px calc(10px + env(safe-area-inset-bottom));
+      padding: 7px 18px calc(7px + env(safe-area-inset-bottom));
       border-top: 1px solid rgba(255, 255, 255, 0.18);
       background: linear-gradient(180deg, rgba(18, 104, 104, 0.96), rgba(10, 78, 78, 0.96));
       box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.18);
@@ -240,79 +240,75 @@
     }
     .fixed-bookmark-bar__inner {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      justify-content: center;
+      gap: 6px;
       max-width: 1120px;
-      min-height: 44px;
       margin: 0 auto;
+      text-align: center;
     }
     .fixed-bookmark-bar__copy {
       display: flex;
       min-width: 0;
-      flex: 1 1 auto;
-      flex-direction: column;
-      gap: 2px;
-      text-align: left;
+      justify-content: center;
+      text-align: center;
     }
     .fixed-bookmark-bar__text {
       color: #fff;
-      font-size: 1rem;
+      font-size: 0.96rem;
       font-weight: 700;
-      line-height: 1.35;
+      line-height: 1.25;
       letter-spacing: 0.01em;
       white-space: nowrap;
     }
-    .fixed-bookmark-bar__subtext {
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 0.82rem;
-      font-weight: 500;
-      line-height: 1.35;
-      letter-spacing: 0.04em;
-    }
     .fixed-bookmark-bar__actions {
       display: flex;
-      flex: 0 0 auto;
+      flex-direction: column;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      gap: 5px;
     }
     .fixed-bookmark-bar__button {
       flex: 0 0 auto;
-      min-height: 40px;
-      padding: 0 18px;
+      min-height: 30px;
+      padding: 0 15px;
       border: 1px solid rgba(255, 255, 255, 0.55);
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.94);
       color: #0f6f6f;
       cursor: pointer;
       font-family: var(--font-family);
-      font-size: 0.95rem;
+      font-size: 0.86rem;
       font-weight: 700;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
       transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     }
     .fixed-bookmark-bar__button:hover {
       background: #ffffff;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+      box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
       transform: translateY(-1px);
     }
     .fixed-bookmark-bar__button:focus-visible {
       outline: 3px solid rgba(255, 255, 255, 0.95);
       outline-offset: 3px;
-      box-shadow: 0 0 0 6px rgba(47, 185, 185, 0.32), 0 8px 20px rgba(0, 0, 0, 0.16);
+      box-shadow: 0 0 0 5px rgba(47, 185, 185, 0.32), 0 7px 18px rgba(0, 0, 0, 0.15);
     }
     .fixed-bookmark-bar__status {
-      max-width: 280px;
+      max-width: min(420px, calc(100vw - 40px));
+      max-height: 0;
+      overflow: hidden;
       color: rgba(255, 255, 255, 0.78);
-      font-size: 0.86rem;
-      line-height: 1.4;
+      font-size: 0.82rem;
+      line-height: 1.35;
       opacity: 0;
       pointer-events: none;
-      text-align: right;
+      text-align: center;
       transform: translateY(3px);
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      transition: opacity 0.2s ease, transform 0.2s ease, max-height 0.2s ease;
     }
     .fixed-bookmark-bar__status.is-visible {
+      max-height: 40px;
       opacity: 1;
       transform: translateY(0);
     }
@@ -362,48 +358,25 @@
         line-height: normal;
       }
       body#bg {
-        padding-bottom: 166px;
+        padding-bottom: 98px;
       }
       .fixed-bookmark-bar {
-        padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+        padding: 8px 14px calc(8px + env(safe-area-inset-bottom));
       }
       .fixed-bookmark-bar__inner {
-        flex-wrap: wrap;
-        gap: 10px;
-        min-height: 0;
-      }
-      .fixed-bookmark-bar__copy {
-        flex: 1 1 100%;
-        text-align: center;
+        gap: 6px;
       }
       .fixed-bookmark-bar__text {
-        font-size: 0.98rem;
+        font-size: 0.95rem;
         white-space: normal;
       }
-      .fixed-bookmark-bar__subtext {
-        display: none;
-      }
-      .fixed-bookmark-bar__actions {
-        width: 100%;
-        flex-direction: column-reverse;
-        justify-content: center;
-        gap: 8px;
-      }
       .fixed-bookmark-bar__button {
-        width: 100%;
-        min-height: 42px;
+        min-height: 31px;
+        padding: 0 15px;
+        font-size: 0.86rem;
       }
       .fixed-bookmark-bar__status {
-        width: 100%;
-        max-width: none;
-        max-height: 0;
-        min-height: 0;
-        overflow: hidden;
-        text-align: center;
-      }
-      .fixed-bookmark-bar__status.is-visible {
-        max-height: 42px;
-        min-height: 20px;
+        max-width: calc(100vw - 28px);
       }
     }
   </style>
@@ -516,11 +489,10 @@
     <div class="fixed-bookmark-bar__inner">
       <div class="fixed-bookmark-bar__copy">
         <span class="fixed-bookmark-bar__text">⭐ 收藏本頁，防止入口遺失</span>
-        <span class="fixed-bookmark-bar__subtext">官方入口頁｜建議加入書籤</span>
       </div>
       <div class="fixed-bookmark-bar__actions">
-        <span class="fixed-bookmark-bar__status" id="copyPageUrlStatus" role="status" aria-live="polite"></span>
         <button class="fixed-bookmark-bar__button" type="button" id="copyPageUrl">複製地址</button>
+        <span class="fixed-bookmark-bar__status" id="copyPageUrlStatus" role="status" aria-live="polite"></span>
       </div>
     </div>
   </div>
@@ -590,7 +562,6 @@
     (function() {
       const copyButton = document.getElementById('copyPageUrl');
       const copyStatus = document.getElementById('copyPageUrlStatus');
-      const successMessage = '已複製本頁地址，請加入書籤保存';
       const failureMessage = '複製失敗，請手動收藏本頁';
       let statusTimer;
       let buttonTimer;
@@ -607,6 +578,11 @@
         statusTimer = window.setTimeout(() => {
           copyStatus.classList.remove('is-visible');
         }, 3000);
+      }
+
+      function clearStatus() {
+        copyStatus.classList.remove('is-visible');
+        window.clearTimeout(statusTimer);
       }
 
       function showCopiedButtonText() {
@@ -659,9 +635,11 @@
         }
 
         if (copied) {
+          clearStatus();
           showCopiedButtonText();
+        } else {
+          showStatus(failureMessage);
         }
-        showStatus(copied ? successMessage : failureMessage);
       });
     })();
   </script>

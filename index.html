@@ -55,6 +55,7 @@
     body#bg {
       background-color: #339999;
       transition: opacity 0.5s ease-in-out;
+      padding-bottom: 112px;
     }
 
     /* 顶部角落品牌标识 */
@@ -213,6 +214,79 @@
       line-height: 1.6;
     }
 
+    .fixed-bookmark-bar {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      width: min(620px, calc(100% - 32px));
+      padding: 12px 14px 12px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      background: rgba(17, 84, 84, 0.92);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(10px);
+      transform: translateX(-50%);
+    }
+    .fixed-bookmark-bar__text {
+      flex: 1;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .fixed-bookmark-bar__button {
+      flex: 0 0 auto;
+      min-height: 40px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #1d7777;
+      cursor: pointer;
+      font-family: var(--font-family);
+      font-size: 0.95rem;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .fixed-bookmark-bar__button:hover,
+    .fixed-bookmark-bar__button:focus-visible {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+      transform: translateY(-1px);
+    }
+    .fixed-bookmark-bar__button:focus-visible {
+      outline: 3px solid rgba(255, 255, 255, 0.95);
+      outline-offset: 3px;
+    }
+    .fixed-bookmark-bar__status {
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 8px);
+      width: max-content;
+      max-width: calc(100vw - 32px);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.76);
+      color: #fff;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      opacity: 0;
+      pointer-events: none;
+      text-align: center;
+      transform: translate(-50%, 6px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .fixed-bookmark-bar__status.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
     /* 移动端样式（保留原先的按钮、图标放大等） */
     @media (max-width: 1080px) and (orientation: portrait) {
       .top-bar {
@@ -256,6 +330,27 @@
         align-items: center;
         justify-content: center;
         line-height: normal;
+      }
+      body#bg {
+        padding-bottom: 148px;
+      }
+      .fixed-bookmark-bar {
+        bottom: 12px;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: calc(100% - 24px);
+        padding: 12px;
+        border-radius: 18px;
+      }
+      .fixed-bookmark-bar__text {
+        flex: 1 1 100%;
+        font-size: 0.98rem;
+        text-align: center;
+        white-space: normal;
+      }
+      .fixed-bookmark-bar__button {
+        width: 100%;
+        min-height: 42px;
       }
     }
   </style>
@@ -364,6 +459,12 @@
     <p>請將 <a href="https://address.besnow.xyz/" rel="noopener noreferrer">address.besnow.xyz</a> 加入書籤並定期回訪；如有任何私訊（PM）索取敏感資料，一律視為詐騙。</p>
   </footer>
 
+  <div class="fixed-bookmark-bar" role="region" aria-label="收藏本頁提示">
+    <span class="fixed-bookmark-bar__text">⭐ 收藏本頁，防止入口遺失</span>
+    <button class="fixed-bookmark-bar__button" type="button" id="copyPageUrl">複製地址</button>
+    <span class="fixed-bookmark-bar__status" id="copyPageUrlStatus" role="status" aria-live="polite"></span>
+  </div>
+
   <!-- 主圖標懸停時切換圖片（旋轉效果由 CSS 控制） -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -423,6 +524,72 @@
       });
     })();
   </script>
+
+  <!-- 收藏提示條：複製當前頁面 URL -->
+  <script>
+    (function() {
+      const copyButton = document.getElementById('copyPageUrl');
+      const copyStatus = document.getElementById('copyPageUrlStatus');
+      const successMessage = '已複製本頁地址，請加入書籤保存';
+      const failureMessage = '複製失敗，請手動收藏本頁';
+      let statusTimer;
+
+      if (!copyButton || !copyStatus) return;
+
+      function showStatus(message) {
+        copyStatus.textContent = message;
+        copyStatus.classList.add('is-visible');
+        window.clearTimeout(statusTimer);
+        statusTimer = window.setTimeout(() => {
+          copyStatus.classList.remove('is-visible');
+        }, 3000);
+      }
+
+      function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.top = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        try {
+          const copied = document.execCommand('copy');
+          if (!copied) {
+            throw new Error('Fallback copy command failed');
+          }
+        } finally {
+          document.body.removeChild(textarea);
+        }
+      }
+
+      copyButton.addEventListener('click', async () => {
+        const pageUrl = window.location.href;
+        let copied = false;
+
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            try {
+              await navigator.clipboard.writeText(pageUrl);
+              copied = true;
+            } catch (error) {
+              fallbackCopy(pageUrl);
+              copied = true;
+            }
+          } else {
+            fallbackCopy(pageUrl);
+            copied = true;
+          }
+        } catch (error) {
+          copied = false;
+        }
+
+        showStatus(copied ? successMessage : failureMessage);
+      });
+    })();
+  </script>
+
 
   <!-- 结构化数据 JSON-LD -->
   <script type="application/ld+json">

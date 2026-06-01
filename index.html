@@ -412,13 +412,13 @@
            target="_blank" rel="noopener noreferrer">官方網址</a>
 
         <a href="https://besnow.me/"
-           title="Besnow Cloud 備用地址 I（besnow.me，點擊後自動分配可用入口）"
+           title="Besnow Cloud 備用地址 I（besnow.me，點擊後自動生成備用入口）"
            class="button random-domain button-rounded button-plain button-small-caps button-border"
            data-base="besnow.me"
            target="_blank" rel="noopener noreferrer">備用地址 I</a>
 
         <a href="https://besnow.us/"
-           title="Besnow Cloud 備用地址 II（besnow.us，點擊後自動分配可用入口）"
+           title="Besnow Cloud 備用地址 II（besnow.us，點擊後自動生成備用入口）"
            class="button random-domain button-rounded button-plain button-small-caps button-border"
            data-base="besnow.us"
            target="_blank" rel="noopener noreferrer">備用地址 II</a>
@@ -466,7 +466,7 @@
         </details>
         <details>
           <summary>主站打不開時怎麼處理？</summary>
-          <p>結論：直接使用備用地址 I / II，它會在點擊時隨機分配可用子域提升命中率。操作：點擊按鈕→待跳轉→若仍受阻，切換網絡或稍後重試，並留意公告頻道置頂訊息。請把本頁加到書籤以便回來重試。</p>
+          <p>結論：直接使用備用地址 I / II，它會在點擊時自動生成備用子域入口；若仍無法打開，請返回本頁重新嘗試，或查看公告頻道置頂訊息。請把本頁加到書籤以便回來重試。</p>
         </details>
         <details>
           <summary>如何收藏避免遺失？</summary>
@@ -478,7 +478,7 @@
         </details>
         <details>
           <summary>隨機子域跳轉是否安全？</summary>
-          <p>備用地址 I / II 會在點擊時才生成隨機子域，全部都在 besnow.me / besnow.us 主域下並使用有效 HTTPS 憑證。若瀏覽器提示憑證異常請立即停止，透過書籤回到本頁並核對公告頻道置頂訊息。</p>
+          <p>備用地址 I / II 會在點擊時生成 besnow.me / besnow.us 主域下的子域入口。若瀏覽器提示憑證異常或頁面內容可疑，請立即停止操作，並回到書籤中的本頁核對公告頻道置頂訊息。</p>
         </details>
         <details>
           <summary>如何查看官方公告與加入群組？</summary>
@@ -523,20 +523,32 @@
     (function() {
       const randomLinks = document.querySelectorAll('a.random-domain');
       const words = [
-        'fast','safe','cloud','light','nova','sky','aqua','secure','swift','fresh','leaf','stone','wave','breeze','glow','pulse','zen','mint','echo','spark',
-        'cabbage','spinach','cauliflower','carrot','tomato','cucumber','pumpkin','pepper','mushroom','onion','lime','grape','kiwi','melon','pearl','maple','cedar','willow','ash','elm'
+        'edge','node','link','gate','line','route','access','portal',
+        'fast','safe','cloud','secure','swift','stable','global','fresh',
+        'hk','sg','jp','us','core','mesh','relay','entry'
       ];
+      const usedSubdomains = new Set();
 
       function generateRandomSubdomain() {
-        const pieceCount = Math.floor(Math.random() * 2) + 1;
-        const selected = [];
-        for (let i = 0; i < pieceCount; i++) {
-          selected.push(words[Math.floor(Math.random() * words.length)]);
-        }
-        if (Math.random() < 0.4) {
-          selected.push(Math.floor(Math.random() * 100));
-        }
-        return selected.join('');
+        let subdomain;
+
+        do {
+          const pieceCount = Math.random() < 0.72 ? 1 : 2;
+          const selected = [];
+
+          for (let i = 0; i < pieceCount; i++) {
+            selected.push(words[Math.floor(Math.random() * words.length)]);
+          }
+
+          if (Math.random() < 0.55) {
+            selected.push(Math.floor(10 + Math.random() * 90));
+          }
+
+          subdomain = selected.join('');
+        } while (usedSubdomains.has(subdomain) && usedSubdomains.size < 200);
+
+        usedSubdomains.add(subdomain);
+        return subdomain;
       }
 
       function updateLinkHref(link) {
@@ -549,13 +561,17 @@
 
       function handleActivation(event) {
         const isKeyboard = event.type === 'keydown';
+
         if (isKeyboard && event.key !== 'Enter' && event.key !== ' ') {
           return;
         }
+
+        updateLinkHref(event.currentTarget);
+
         if (isKeyboard && event.key === ' ') {
           event.preventDefault();
+          event.currentTarget.click();
         }
-        updateLinkHref(event.currentTarget);
       }
 
       randomLinks.forEach(link => {
@@ -748,7 +764,7 @@
               "name": "主站打不開時怎麼處理？",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "結論：直接使用備用地址 I / II，點擊後會隨機分配可用子域提升連線成功率；若仍受阻，可切換網絡或稍後重試。請務必把本頁加入書籤並依公告頻道置頂訊息確認最新入口。"
+                "text": "結論：直接使用備用地址 I / II，它會在點擊時自動生成備用子域入口；若仍無法打開，請返回本頁重新嘗試，或查看公告頻道置頂訊息。請務必把本頁加入書籤並依公告頻道置頂訊息確認最新入口。"
               }
             },
             {
@@ -772,7 +788,7 @@
               "name": "隨機子域跳轉是否安全？",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "備用地址 I / II 在點擊時才會生成隨機子域並自動跳轉，全部位於 besnow.me / besnow.us 主域下並使用有效 HTTPS 憑證。若瀏覽器提示憑證異常或域名不在白名單，請立即停止並從書籤回到本頁核對公告頻道置頂。"
+                "text": "備用地址 I / II 會在點擊時生成 besnow.me / besnow.us 主域下的子域入口。若瀏覽器提示憑證異常或頁面內容可疑，請立即停止操作，並回到書籤中的本頁核對公告頻道置頂訊息。"
               }
             },
             {

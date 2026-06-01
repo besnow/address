@@ -561,13 +561,17 @@
 
       function handleActivation(event) {
         const isKeyboard = event.type === 'keydown';
+
         if (isKeyboard && event.key !== 'Enter' && event.key !== ' ') {
           return;
         }
+
+        updateLinkHref(event.currentTarget);
+
         if (isKeyboard && event.key === ' ') {
           event.preventDefault();
+          event.currentTarget.click();
         }
-        updateLinkHref(event.currentTarget);
       }
 
       randomLinks.forEach(link => {

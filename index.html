@@ -90,30 +90,69 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-      margin: 10px 0 18px;
+      gap: 0;
+      margin: 10px 0 24px;
     }
-    .page-title h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: 0.6px;
+    .hero-title {
+      display: inline-flex;
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      color: var(--text-primary);
       font-family: var(--font-family);
+      line-height: 1;
+      text-align: center;
     }
-    .silver-text {
-      background: linear-gradient(to bottom, #C0C0C0 0%, #E0E0E0 50%, #A9A9A9 100%);
+    .hero-title__brand {
+      display: inline-block;
+      max-width: 100%;
+      background: linear-gradient(
+        180deg,
+        #f8ffff 0%,
+        #dcefed 42%,
+        #accfca 74%,
+        #7fb4ad 100%
+      );
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      font-weight: bold;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      font-family: "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      font-size: clamp(2.25rem, 6.6vw, 4.6rem);
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      line-height: 1.06;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.10), 0 8px 20px rgba(0, 0, 0, 0.12);
+      transform: scaleX(1.08);
+      transform-origin: center;
+      white-space: nowrap;
     }
-    .page-title h2 {
-      font-size: 1.15rem;
+    .hero-title__sub {
+      display: inline-block;
+      max-width: 92vw;
+      color: rgba(245, 255, 253, 0.86);
+      font-family: "Noto Sans TC", "Noto Sans HK", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      font-size: clamp(0.88rem, 2.2vw, 1.05rem);
       font-weight: 600;
-      opacity: 0.98;
-      letter-spacing: 0.2px;
-      text-align: center;
-      font-family: var(--font-family);
+      letter-spacing: 0.36em;
+      line-height: 1.35;
+      text-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
+    }
+    .hero-title::after {
+      content: "";
+      display: block;
+      width: min(420px, 72vw);
+      height: 1px;
+      margin-top: 14px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(230, 255, 250, 0.28),
+        rgba(165, 220, 215, 0.42),
+        rgba(230, 255, 250, 0.28),
+        transparent
+      );
     }
     .content-wrap {
       width: var(--content-width);
@@ -318,11 +357,26 @@
         width: 180px;
         margin-top: 60px;
       }
-      .page-title h1 {
-        font-size: 1.6rem;
+      .page-title {
+        margin: 10px 0 22px;
       }
-      .page-title h2 {
-        font-size: 1.05rem;
+      .hero-title {
+        gap: 8px;
+      }
+      .hero-title__brand {
+        font-size: clamp(1.85rem, 9vw, 2.8rem);
+        letter-spacing: 0.12em;
+        transform: scaleX(1.02);
+      }
+      .hero-title__sub {
+        max-width: 92vw;
+        font-size: 0.84rem;
+        letter-spacing: 0.18em;
+        line-height: 1.45;
+      }
+      .hero-title::after {
+        width: min(320px, 70vw);
+        margin-top: 10px;
       }
       .content-wrap {
         padding: 20px 16px;
@@ -558,8 +612,10 @@
         <img src="src/tx.png" alt="Besnow Cloud 貝雪雲 Logo" id="mainimg" class="rotate">
       </div>
       <div class="page-title">
-        <h1 class="silver-text">Besnow Cloud 貝雪雲官方入口導航</h1>
-        <h2>請加入書籤收藏本頁；官網地址、備用地址與公告頻道以置頂訊息為準</h2>
+        <h1 class="hero-title" aria-label="Besnow Cloud 貝雪雲官方入口導航">
+          <span class="hero-title__brand">Besnow Cloud</span>
+          <span class="hero-title__sub">貝 雪 雲 官 方 入 口 導 航</span>
+        </h1>
       </div>
       <div class="showcase-examples l-over l-center" aria-label="Besnow Cloud 官方訪問入口">
         <a href="https://besnow.org/"

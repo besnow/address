@@ -177,27 +177,6 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    /* 底部样式 */
-    #top_footer {
-      text-align: center;
-      margin-bottom: 20px;
-      padding: 0 20px;
-    }
-    hr.top_hr_style02 {
-      width: 50%;
-      margin: 20px auto;
-      border: none;
-      border-top: 2px solid #ffffff33;
-    }
-    #top_footer p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    #top_footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
     /* 主图标旋转动画 */
     @keyframes rotateAnimation {
       from { transform: rotate(0deg); }
@@ -442,7 +421,7 @@
           "about": {
             "@id": "https://besnow.org/#organization"
           },
-          "dateModified": "2026-06-01"
+          "dateModified": "2026-06-08"
         },
         {
           "@type": "FAQPage",
@@ -501,6 +480,30 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "直接使用備用地址 I / II，它會在點擊時自動生成備用子域入口；若仍無法打開，請返回本頁重新嘗試，或查看公告頻道置頂訊息。請把本頁加到書籤以便回來重試。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "為甚麼我無法連接部分接入點？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "部分接入點可能需要您的本地網絡支援 IPv6。如果您的寬頻、路由器或客戶端未開啟 IPv6，可能會出現無法連接、延遲異常或部分節點不可用的情況。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "如何檢查自己的網絡是否支援 IPv6？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "您可以先使用 IPv6 檢測網站確認當前網絡狀態。如果檢測結果顯示不支援 IPv6，建議檢查光貓、路由器以及客戶端中的 IPv6 設定。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "不知道如何開啟 IPv6 怎麼辦？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "我們整理了 IPv6 開啟與檢查教程，您可以前往 IPv6 網絡使用指南 查看詳細說明：https://besnow.org/ipv6-guide.html"
               }
             },
             {
@@ -623,6 +626,18 @@
           <p>結論：直接使用備用地址 I / II，它會在點擊時自動生成備用子域入口；若仍無法打開，請返回本頁重新嘗試，或查看公告頻道置頂訊息。請把本頁加到書籤以便回來重試。</p>
         </details>
         <details>
+          <summary>為甚麼我無法連接部分接入點？</summary>
+          <p>部分接入點可能需要您的本地網絡支援 IPv6。如果您的寬頻、路由器或客戶端未開啟 IPv6，可能會出現無法連接、延遲異常或部分節點不可用的情況。</p>
+        </details>
+        <details>
+          <summary>如何檢查自己的網絡是否支援 IPv6？</summary>
+          <p>您可以先使用 IPv6 檢測網站確認當前網絡狀態。如果檢測結果顯示不支援 IPv6，建議檢查光貓、路由器以及客戶端中的 IPv6 設定。</p>
+        </details>
+        <details>
+          <summary>不知道如何開啟 IPv6 怎麼辦？</summary>
+          <p>我們整理了 IPv6 開啟與檢查教程，您可以前往「<a href="https://besnow.org/ipv6-guide.html" target="_blank" rel="noopener">IPv6 網絡使用指南</a>」查看詳細說明。</p>
+        </details>
+        <details>
           <summary>如何收藏避免遺失？</summary>
           <p>請立即按 Ctrl+D（Mac 按 ⌘+D）或使用手機瀏覽器的「加入書籤／添加到主畫面」功能收藏本頁，並在公告頻道開啟置頂訊息通知，之後只需從書籤打開即可隨時核對最新入口。</p>
         </details>
@@ -642,10 +657,6 @@
     </main>
   </div>
 
-  <footer id="top_footer">
-    <hr class="top_hr_style02">
-    <p>請將 <a href="https://address.besnow.xyz/" rel="noopener noreferrer">address.besnow.xyz</a> 加入書籤並定期回訪；如有任何私訊（PM）索取敏感資料，一律視為詐騙。</p>
-  </footer>
 
   <div class="fixed-bookmark-bar" role="region" aria-label="收藏本頁提示">
     <div class="fixed-bookmark-bar__inner">
